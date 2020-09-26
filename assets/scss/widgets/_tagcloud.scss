@@ -1,0 +1,29 @@
+.widget_tag_cloud{
+	.cms-widget-content{
+		padding-top: 10px;
+	}
+}
+
+
+$tagcloud_space: 10px;
+.tagcloud{
+	display: flex;
+	flex-wrap: wrap;
+	margin: $tagcloud_space / -2;
+	> a{
+		flex: 0 0 auto;
+		max-width: 100%;
+		margin: $tagcloud_space /2;
+		padding: 4px 21px;
+		border: 1px solid var(--accent-color);
+		background: var(--accent-color);
+		color:  $white-color;
+		font-size: 86.667% ;
+		@include border-radius(17px);
+		&:hover{
+			border-color: var(--secondary-color);
+			background: var(--secondary-color);
+			color: var(--primary-color);
+		}
+	}
+}

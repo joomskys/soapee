@@ -1,0 +1,49 @@
+.cms-primary-menu{
+	// level 1
+	> li {
+		> a{
+			color: var(--menu-regular);
+			font-size: var(--menu-font-size);
+			font-weight: var(--menu-font-weight);
+			font-family: var(--menu-font-family);
+			.cms-menu-title{
+				&:after{
+					background: var(--menu-hover);
+				}
+			}
+			&:hover{
+				color: var(--menu-hover);
+			}
+		}
+		.main-menu-toggle:before{
+			color: var(--menu-regular);
+		}
+		// hover
+		&:hover{
+			> a,
+			> .main-menu-toggle:before{
+				color: var(--menu-hover);
+				.cms-menu-title:after{
+					background: var(--menu-hover);
+				}
+			}
+		}
+		//active
+		&.current-menu-item,
+		&.current-menu-ancestor {
+			> a,
+			> .main-menu-toggle:before{
+				color: var(--menu-active);
+				.cms-menu-title:after{
+					background: var(--menu-active);
+				}
+			}
+		}
+	}
+}
+.menu-color{
+	color: var(--menu-regular);
+	&:hover{
+		color: var(--menu-hover);
+	}
+}

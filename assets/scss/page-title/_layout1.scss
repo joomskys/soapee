@@ -1,0 +1,26 @@
+.cms-pagetitle-layout1{
+	.cms-ptitle-text{
+		font-size: 55px;
+		line-height: 60px;
+		@media (max-width: $screen-sm-max){
+			font-size: 40px;
+			line-height: 50px;
+		}
+	}
+	.cms-breadcrumb{
+		padding: 8px 36px;
+		display: inline-block;
+		.divider{
+			width: 4px;
+			height: 4px;
+			display: inline-block;
+			margin-left: 5px;
+			background: var(--ptitle-text-color);
+			@include border-radius(50%);
+			[dir="rtl"] &{
+				margin-left: 0;
+				margin-right: 5px;
+			}
+		}
+	}
+}

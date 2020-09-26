@@ -1,0 +1,31 @@
+.cms-team-layout-1{
+	.team-meta{
+		max-width: 74%;
+		margin: -37px auto 0;
+		z-index: 1;
+	}
+}
+
+.cms-team-layout-2{
+	.team-socials{
+		position: absolute;
+		left: 50%;
+		bottom: 5px;
+		@include transform(translateX(-50%));
+	}
+	@media (min-width: $screen-xl-min){
+		.team-socials{
+			bottom: -100px;
+		}
+		.cms-team-item{
+			&:hover{
+				.team-socials{
+					bottom: 5px;
+				}
+				.team-img{
+					@include transform(scale(1.05));
+				}
+			}
+		}
+	}
+}

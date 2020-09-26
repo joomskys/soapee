@@ -1,0 +1,103 @@
+$star_icon_font: 'Material-Design-Iconic-Font';
+$star_icon: '\f27c';
+$star_icon_filled: '\f27d';
+$star_icon_color: #888;
+$star_icon_filled_color: var(--rating-color);
+
+.comments-rating {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+.rating-container {
+	display: inline-block;
+	height: 24px;
+	vertical-align: top;
+	/* remove inline-block whitespace */
+	font-size: 0;
+	/* flip the order so we can use the + and ~ combinators */
+	unicode-bidi: bidi-override;
+	direction: rtl;
+}
+
+.rating-container * {
+	font-size: 1.4rem;
+}
+
+.rating-container > input {
+	display: none;
+}
+
+.rating-container > input + label {
+	/* only enough room for the star */
+	font-family: $star_icon_font;
+	display: inline-block;
+	overflow: hidden;
+	text-indent: 9999px;
+	width: 1em;
+	white-space: nowrap;
+	cursor: pointer;
+	margin: 0;
+}
+
+.rating-container > input + label:before {
+	display: inline-block;
+	text-indent: -9999px;
+	content: $star_icon;
+	color: $star_icon_color;
+}
+
+.rating-container > input:checked ~ label:before,
+.rating-container > input + label:hover ~ label:before,
+.rating-container > input + label:hover:before,
+.cms-rating-icon-filled:before {
+	content: $star_icon_filled;
+	color: $star_icon_filled_color;
+	text-shadow: 0 0 1px #333;
+}
+
+.rating-container > .star-cb-clear + label {
+	text-indent: -9999px;
+	width: .5em;
+	margin-left: -.5em;
+}
+
+.rating-container > .star-cb-clear + label:before {
+	width: .5em;
+}
+
+.rating-container:hover > input + label:before,
+.cms-rating-icon-empty:before{
+	content: $star_icon;
+	color: $star_icon_color;
+	text-shadow: none;
+}
+
+.rating-container:hover > input + label:hover ~ label:before,
+.rating-container:hover > input + label:hover:before {
+	content: $star_icon_filled;
+	color: $star_icon_filled_color;
+	text-shadow: 0 0 1px #333;
+}
+
+.comment-respond .rating-container > .star-cb-clear + label, .comment-respond .rating-container > input + label:before {
+	text-indent: 9999px;
+}
+
+.comment-respond .rating-container > input + label {
+	text-indent: -9999px;
+}
+
+.cms-rating-icon-filled,
+.cms-rating-icon-empty{
+	font-family: $star_icon_font;
+	display: inline-block;
+	overflow: hidden;
+	width: 1em;
+	white-space: nowrap;
+	cursor: pointer;
+	margin: 0;
+}
+.cms-rating-icon-empty{
+	z-index: -1;
+}

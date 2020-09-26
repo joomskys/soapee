@@ -1,0 +1,22 @@
+@import "404";
+@import "archives";
+@import "comments";
+@import "post_audio";
+@import "post_chat";
+@import "post_gallery";
+@import "post_video";
+@import "single_page";
+@import "single_post";
+@import "single_case_study";
+@import "wp_gallery";
+@import "wp_search_result";
+@import "pagination";
+@import "post_meta";
+
+.cms-post-content h6 {
+  margin: 0 0 10px;
+}
+
+.cms-post-content ul {
+  margin-bottom: 22px;
+}

@@ -1,0 +1,14 @@
+#cms-footer{
+  .cms-widget{
+    margin-top: 25px;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+}
+
+@import "footer_dark";
+@import "footer_top";
+@import "footer_middle";
+@import "footer_bottom";
+@import "scrolltop";

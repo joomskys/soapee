@@ -1,0 +1,6 @@
+.woocommerce-notices-wrapper{
+	margin-bottom: 30px;
+	&:empty{
+		display: none;
+	}
+}

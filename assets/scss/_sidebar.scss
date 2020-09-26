@@ -1,0 +1,58 @@
+/* Sticky Sidebar */
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
+}
+.admin-bar .sidebar-sticky  {
+  top: 60px;
+}
+.header-sticky .sidebar-sticky {
+  top: 110px;
+}
+.admin-bar.header-sticky .sidebar-sticky{
+  top: 140px;
+}
+// Widget area style 
+.cms-sidebar-area-inner{
+	display: flex;
+	flex-wrap: wrap;
+	margin: -15px;
+	> .cms-widget{
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding: 15px;
+	}
+	@media (max-width: $screen-md-max){
+		margin-top: 50px;
+	}
+}
+
+// Bottom sidebar 
+.cms-sidebar-area-bottom {
+	padding-top: 50px;
+	.cms-sidebar-area-inner{
+		> .cms-widget{
+			@media (min-width: $screen-lg-min){
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+			@media (min-width: $screen-xl-min){
+				flex: 0 0 33.333%;
+				max-width: 33.333%;
+			}
+		}
+	}
+}
+
+
+.cms-sidebar-area-left .cms-sidebar-area-inner,
+.cms-sidebar-area-right .cms-sidebar-area-inner{
+	display: flex;
+	flex-wrap: wrap;
+}
+.cms-sidebar-area-left .cms-widget,
+.cms-sidebar-area-right .cms-widget{
+	flex: 0 0 100%;
+	width: 100%;
+}

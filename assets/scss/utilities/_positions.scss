@@ -1,0 +1,32 @@
+.relative{
+    position: relative;
+}
+.absolute{
+	position: absolute;
+	z-index: 1;
+}
+$cms-positions :(
+	5,10,15,20,25,30,35,40
+);
+@each $position in $cms-positions{
+	.cms-abs-t-#{$position} {
+		top: #{$position}px;
+	}
+	.cms-abs-r-#{$position} {
+		right: #{$position}px;
+		[dir="rtl"] &{
+			right: auto;
+			left: #{$position}px;
+		}
+	}
+	.cms-abs-b-#{$position} {
+		bottom: #{$position}px;
+	}
+	.cms-abs-l-#{$position} {
+		left: #{$position}px;
+		[dir="rtl"] &{
+			left: auto;
+			right: #{$position}px;
+		}
+	}
+}

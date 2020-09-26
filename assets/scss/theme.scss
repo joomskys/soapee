@@ -1,0 +1,104 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Grid
+# Class
+# Forms
+# Button
+# Header
+# Main Menu
+# Page Title & Breadcrumb
+# Post and Page
+# Navigation
+# Layout Content
+# Widgets
+# Media
+# Singlular
+# Comments
+# Footer
+# VC Elements
+/**
+ * Custom Boostrap Grid breakpoint
+ * Need add it before load boostrap grid
+*/
+@import "theme-options";
+
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1700px
+) !default;
+
+$container-max-widths: (
+  xs: 480px,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+
+$grid-gutter-width: 30px;
+$grid-gutters: $grid-gutter-width;
+
+/* Media break point */
+$desktop-screen: 1200px;
+$screen-sm-min: 576px;
+$screen-sm-max: 767px;
+$screen-md-min: 768px;
+$screen-md-max: 991px;
+$screen-lg-min: 992px;
+$screen-lg-max: 1199px;
+$screen-xl-min: 1200px;
+$screen-xxl-min: 1600px;
+
+// boostrap
+@import '_bootstrap/bootstrap-grid';
+@import 'boostrap_theme';
+// gutenberg
+@import "_gutenberg/gutenberg";
+/*--------------------------------------------------------------*/
+@import "functions";
+@import "mixins";
+// Typography
+@import "typo/typo";
+// utilities
+@import "utilities/utilities";
+// libs
+@import "_libs/masonry";
+@import "_libs/slick_slider";
+@import "_libs/slick_slider_theme";
+// layout
+@import "layout";
+// Header
+@import "header/header";
+// Page title
+@import "page-title/page-title";
+// Blog 
+@import "blog/blog.scss";
+// widget
+@import "widgets/widgets";
+// sidebar
+@import "sidebar";
+// Footer
+@import "footer/footer";
+// Elementor
+@import "elementor/elementor";
+// Visual Composer
+@import "vc/vc";
+// WooCommerce
+@import "woo/woo";
+// Extensions
+@import "extensions/extensions";
+
+.container{
+  max-width: 1200px;
+}
+
+
+:root{--logo-width:170px;--logo-height:44px;--logo-units:px;--logo-width-sm:170px;--logo-height-sm:44px;--logo-default:'https://demo.cmssuperheroes.com/themeforest/soapee/wp-content/themes/soapee/assets/images/logo/logo.png';--logo-ontop:'https://demo.cmssuperheroes.com/themeforest/soapee/wp-content/themes/soapee/assets/images/logo/logo-ontop.png';--logo-sticky:'https://demo.cmssuperheroes.com/themeforest/soapee/wp-content/themes/soapee/assets/images/logo/logo-sticky.png';--logo-mobile:'https://demo.cmssuperheroes.com/themeforest/soapee/wp-content/themes/soapee/assets/images/logo/logo-mobile.png';--accent-color: rgba(27,85,227,1);--primary-color: rgba(22,19,87,1);--primary-07-color: rgba(22,19,87,0.7);--primary-102-color: rgba(22,19,87,0.102);--primary-150-color: rgba(22,19,87,0.15);--secondary-color: rgba(255,222,0,1);--blue1-color: rgba(14,20,34,1);--blue2-color: rgba(39,35,129,1);--blue4-color: rgba(14,12,68,1);--blue5-color: rgba(18,29,58,0.15);--grey1-color: rgba(119,119,119,1);--grey2-color: rgba(50,55,67,1);--grey3-color: rgba(231,231,238,1);--grey4-color: rgba(232,238,252,1);--grey5-color: rgba(251,251,251,1);--grey6-color: rgba(218,217,222,1);--grey7-color: rgba(245,245,245,1);--grey8-color: rgba(246,248,254,1);--grey8-02-color: rgba(200,200,200,0.2);--grey8-06-color: rgba(200,200,200,0.6);--grey-9-color: rgba(213,214,229,1);--grey-10-color: rgba(216,216,216,1);--d8d8d8-color: rgba(216,216,216,1);--grey-f1f1f5-color: rgba(241,241,245,1);--black-02-color: rgba(0,0,0,0.2);--white-color: rgba(255,255,255,1);--white-15-color: rgba(255,255,255,0.15);--white-20-color: rgba(255,255,255,0.2);--white-30-color: rgba(255,255,255,0.3);--rating-color: rgba(250,183,2,1);--d6d6d6-color: rgba(214,214,214,1);--transparent-color: rgba(0,0,0);--link-regular-color: var(--primary-color);--link-hover-color: var(--accent-color);--link-active-color: var(--accent-color);--body-bg: #fff;--body-font-family: 'futurabook', sans-serif;--body-font-size: 15px;--body-font-weight: 400;--body-font-color: #444;--body-line-height: 24px;--body-letter-spacing: 0px;--body-font-size-large: 17px;--body-font-size-medium: 16px;--body-font-size-small: 13px;--body-font-size-xsmall: 12px;--body-font-size-xxsmall: 11px;--header-height: 100px;--header-width: 320px;--menu-bg: #fff;--menu-regular: var(--primary-color);--menu-hover: var(--accent-color);--menu-active: var(--accent-color);--menu-font-family: 'google_sansmedium', sans-serif;--menu-font-size: var(--body-font-size-large);--menu-font-weight: unset;--ontop-bg: transparent;--ontop-regular: #fff;--ontop-hover: var(--accent-color);--ontop-active: var(--accent-color);--sticky-bg: #fff;--sticky-regular: var(--primary-color);--sticky-hover: var(--accent-color);--sticky-active: var(--accent-color);--dropdown-bg: #f5f5f5;--dropdown-regular: var(--primary-color);--dropdown-hover: var(--accent-color);--dropdown-active: var(--accent-color);--ptitle-background-color: var(--blue1-color);--ptitle-background-repeat: no-repeat;--ptitle-background-size: cover;--ptitle-background-attachment: fixed;--ptitle-background-position: center center;--ptitle-background-image: url(https://demo.cmssuperheroes.com/themeforest/soapee/wp-content/themes/soapee/assets/images/ptitle-layout/bg.jpg);--ptitle-color:#fff ;--ptitle-alpha: 1;--ptitle-rgba: rgba(18,29,58,0.5);--ptitle-text-color: #fff;--ptitle-regular: var(--secondary-color);--ptitle-hover: #fff;--ptitle-acctive: var(--accent-color);--heading-h1-size: 36px;--heading-h2-size: 30px;--heading-h3-size: 25px;--heading-h4-size: 18px;--heading-h5-size: 16px;--heading-h6-size: 15px;--heading-font-family: 'google_sansbold', sans-serif;--heading-font-color: var(--primary-color);--heading-font-color-hover: var(--accent-color);--heading-font-weight: normal;--heading-line-height: 1.2;--heading-letter-spacing: 0;--heading-h1-typo-font-family: var(--heading-font-family);--heading-h1-typo-font-size: var(--heading-h1-size);--heading-h1-typo-font-weight: var(--heading-font-weight);--heading-h1-typo-font-color: var(--heading-font-color);--heading-h1-typo-line-height: var(--heading-line-height);--heading-h1-typo-letter-spacing: var(--heading-letter-spacing);--heading-h2-typo-font-family: var(--heading-font-family);--heading-h2-typo-font-size: var(--heading-h2-size);--heading-h2-typo-font-weight: var(--heading-font-weight);--heading-h2-typo-font-color: var(--heading-font-color);--heading-h2-typo-line-height: var(--heading-line-height);--heading-h2-typo-letter-spacing: var(--heading-letter-spacing);--heading-h3-typo-font-family: var(--heading-font-family);--heading-h3-typo-font-size: var(--heading-h3-size);--heading-h3-typo-font-weight: var(--heading-font-weight);--heading-h3-typo-font-color: var(--heading-font-color);--heading-h3-typo-line-height: var(--heading-line-height);--heading-h3-typo-letter-spacing: var(--heading-letter-spacing);--heading-h4-typo-font-family: var(--heading-font-family);--heading-h4-typo-font-size: var(--heading-h4-size);--heading-h4-typo-font-weight: var(--heading-font-weight);--heading-h4-typo-font-color: var(--heading-font-color);--heading-h4-typo-line-height: var(--heading-line-height);--heading-h4-typo-letter-spacing: var(--heading-letter-spacing);--heading-h5-typo-font-family: var(--heading-font-family);--heading-h5-typo-font-size: var(--heading-h5-size);--heading-h5-typo-font-weight: var(--heading-font-weight);--heading-h5-typo-font-color: var(--heading-font-color);--heading-h5-typo-line-height: var(--heading-line-height);--heading-h5-typo-letter-spacing: var(--heading-letter-spacing);--heading-h6-typo-font-family: var(--heading-font-family);--heading-h6-typo-font-size: var(--heading-h6-size);--heading-h6-typo-font-weight: var(--heading-font-weight);--heading-h6-typo-font-color: var(--heading-font-color);--heading-h6-typo-line-height: 1.4667;--heading-h6-typo-letter-spacing: var(--heading-letter-spacing);--meta-font-family: var(--body-font-family);--meta-font-size: var(--body-font-size);--meta-font-color: var(--grey1-color);--meta-font-color-hover: var(--accent-color);--meta-font-weight: 400;--border-main: 1px solid #dad9de;--border-main2: 2px solid #dad9de;--border-main-color: #dad9de;--comment-avatar-size: 65;--comment-border: 1.5px solid var(--accent-color);--comment-radius: 50%;}

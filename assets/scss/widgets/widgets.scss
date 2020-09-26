@@ -1,0 +1,96 @@
+.cms-widget-title{
+    padding: 0 0 15px;
+    margin: 0 0 20px;
+    position: relative;
+}
+.cms-widget-content{
+    padding: 0 20px 30px;
+    .count {
+        width: 22px;
+        text-align: center;
+        line-height: 20px;
+        background: var(--accent-color);
+        color: $white;
+        border-radius: 50%;
+        display: inline-block;
+        height: 22px;
+        font-size: 12px;
+        @include transition();
+    }
+}
+.cms-widget{
+    ul,ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        ul, ol{
+            padding-left: 15px;
+            [dir="rtl"] &{
+                padding-left: 0;
+                padding-right: 15px;
+            }
+        }
+    }
+    li{
+        > a{
+            padding: 5px 0;
+            display: block;
+        }
+    }
+    &.list-carret{
+        ul{
+            li{
+                display: flex;
+                flex-wrap: wrap;
+                &:before{
+                    @include font-zmdi("\f2f6", 17px);
+                    padding: 5px 10px 0 0;
+                    flex: 0 0 auto;
+                    width: auto;
+                    max-width: 100%;
+                    color: $secondary_color;
+                }
+                a{
+                    flex-basis: 0;
+                    flex-grow: 1;
+                    max-width: 100%;
+                    border-bottom: 1px solid transparent;
+                    &:hover{
+                        border-color: $secondary_color;
+                    }
+                }
+            }
+        }
+    }
+}
+.cms-widget-inner{
+    overflow: hidden;
+}
+
+.widget_archive,
+.widget_categories{
+    li > a{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; 
+    }
+}
+
+@import "archive";
+@import "calendar";
+@import "categories";
+@import "cms_recent_post";
+@import "menu";
+@import "newsletter";
+@import "recent_comments";
+@import "rss";
+@import "search";
+@import "tagcloud";
+// theme widget
+@import "quickcontact";
+@import "estimate";
+@import "social";
+@import "work_together";
+// 3rd extensions
+@import "newsletter";
+@import "newsletter_minimal";

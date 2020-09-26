@@ -1,0 +1,38 @@
+.woocommerce-MyAccount-navigation{
+	ul{
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+    	justify-content: center;
+		margin: 0 -15px 15px;
+		li{
+			flex: 0 0 auto;
+		    width: auto;
+		    max-width: 100%;
+		    padding: 0 15px 15px;
+		    a{
+		    	display: block;
+		    	padding: 5px 15px;
+		    	border: 3px solid $primary_color;
+		    	background: $primary_color;
+		    	color: $white;
+		    	text-transform: uppercase;
+		    	letter-spacing: 1px;
+		    	@include border-radius(20px);
+		    	&:hover{
+		    		border-color: $accent_color;
+		    		background: $accent_color;
+		    		color: $white;
+		    	}
+		    }
+		    &.is-active a{
+		    	border-color: $accent_color;
+	    		background: $accent_color;
+	    		color: $white;
+		    }
+		}
+	}
+}
+

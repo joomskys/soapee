@@ -1,0 +1,38 @@
+.single-cms-case-study{
+	.cms-case-study-together-inner{
+		background-image: url(../images/bg-paper-plain.png);
+		background-position: calc(100% + 30px) calc(100% - 93px);
+		background-repeat: no-repeat;
+		@include border-radius-separate(15px, 15px, 0 , 0);
+		[dir = 'rtl'] &{
+			background-position: 0 calc(100% - 93px);
+		}
+	}
+	.cms-case-study-together-qc{
+		> div {
+			padding: 5px 0;
+		}
+		span{
+			min-width: 22px;
+			display: inline-block;
+		}
+	}
+	.cms-case-study-together-button .btn{
+		@include border-radius-separate(0, 0, 15px, 15px);
+		@include box-shadow(none);
+	}
+	.desc:after{
+		content: '';
+		display: block;
+		background-color: $secondary-color;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100px;
+		height: 3px;
+		[dir="rtl"] &{
+			left: auto;
+			right: 0;
+		}
+	}
+}

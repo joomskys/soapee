@@ -1,0 +1,117 @@
+// container width
+@if $enable-grid-classes {
+  .elementor .elementor-section.elementor-section-stretched.elementor-section-boxed>.elementor-container {
+    @include make-container();
+    @include make-container-max-widths();
+  }
+}
+// Column hozirontal align
+$alignment : (
+	'start'  : 'flex-start',
+	'end'    : 'flex-end',
+	'center' : 'center',
+	'between': 'space-between',
+	'around' : 'space-around',
+);
+@each $name, $align in $alignment{
+	.cms-justify-content-#{$name} {
+		> .elementor-container > .elementor-row{
+			justify-content: #{$align};
+		}
+	}
+}
+
+// Custom Column Width
+$elementor_col_width:(
+	41 : 41%,
+	58 : 58%,
+	44 : 44%,
+	56 : 56%,
+	'46\/968' : 45.968%,
+	'54\/032' : 54.032%,
+	'47\/5' : 47.5%,
+	'52\/5' : 52.5%
+);
+$breakpoints: $grid-breakpoints;
+@each $breakpoint in map-keys($breakpoints) {
+	$infix: breakpoint-infix($breakpoint, $breakpoints);
+	@include media-breakpoint-up($breakpoint, $breakpoints) {
+		@each $name, $width in $elementor_col_width{
+			.elementor-col#{$infix}-#{$name},
+			.elementor-column[data-col="#{$name}"] {
+				width: #{$width};
+			}
+		}
+	}
+}
+
+.elementor-section{
+	//overflow: hidden;
+}
+// Main content space
+.elementor-page .cms-content{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.elementor-editor-active .cms-content,
+.elementor-editor-wp-page .cms-content{
+  z-index: 1000;
+}
+.elementor-section-wrap .elementor-section .elementor-container{
+  display: block;
+}
+.elementor .elementor-section.elementor-section-boxed>.elementor-container{
+  max-width: unset;
+}
+.elementor-container .elementor-row{
+  width: unset;
+  flex-wrap: wrap;
+}
+.elementor-section {
+	>.elementor-column-gap-default{
+		//padding: $grid-gutters/2;
+  		> .elementor-row{
+	    	margin: $grid-gutters/-2;
+		    >.elementor-column{
+				padding: $grid-gutters/2;
+				> .elementor-element-populated{
+					padding: 0;
+				}
+		    }
+		}
+  	}
+  	@each $name, $gutter in $theme-gutters{
+  		&.gutters-#{$name}{
+  			> .elementor-container > .elementor-row{
+  				margin: $gutter / -1;
+  				> .elementor-column{
+  					padding: $gutter;
+  					>.elementor-element-populated{
+  						padding: 0;
+  					}
+  				}
+  			}
+  		}
+  	}
+}
+.elementor-inner-section + .elementor-widget{
+  margin-top: $grid-gutters;
+}
+.elementor-element{
+	&.elementor-widget-text-editor{
+		color: inherit;	
+		font-family: inherit;	
+		font-weight: inherit;	
+	}
+}
+
+.elementor-background-overlay{
+	[dir="rtl"] &{
+		@include flip();
+	}
+}
+
+// social 
+.elementor-icon.elementor-social-icon:before{
+	display: none;
+}

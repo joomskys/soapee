@@ -1,0 +1,40 @@
+.cms-searchform,
+.woocommerce-product-search{
+    position: relative;
+    .cms-search-field,
+    .search-field {
+	    padding-right: 50px;
+	    [dir="rtl"] &{
+	        padding-right: 22px;
+	        padding-left: 50px;
+	    }
+	}
+	[type="submit"] {
+	    position: absolute;
+	    top: 4px;
+	    right: 4px; 
+	    width: 38px;
+		height: 38px;
+		padding: 0;
+		background: $accent_color;
+		color: $white;
+		font-size: 0;
+		text-indent: -99999px;
+		@include border-radius(50%);
+	    [dir="rtl"] &{
+	        right: auto;
+	        left: 4px;
+	    } 
+	    &:before{
+			@include font-zmdi('\f1c3', '17px');
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			text-indent: 0;
+			@include transform(translate(-50%, -50%));
+		}
+		&:hover{
+			background: $secondary_color;
+		}
+	}
+}

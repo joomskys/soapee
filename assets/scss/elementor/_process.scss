@@ -1,0 +1,31 @@
+.cms-process-layout-1{
+	.cms-process-item{
+		&:after{
+			content: '';
+			display: block;
+			width: 109px;
+			height: 33px;
+			position: absolute;
+			right: -55px;
+			top: 40px;
+			[dir="rtl"] &{
+				right: auto;
+				left: -55px;
+				@include flip();
+			}
+			@media (max-width: $screen-sm-max){
+				@include opacity(0);
+				visibility: hidden;
+			}
+		}
+		&:nth-child(odd):after{
+			background: url(../images/process-arrow-1.png) center center no-repeat;
+		}
+		&:nth-child(even):after{
+			background: url(../images/process-arrow-2.png) center center no-repeat;
+		}
+		&:last-child:after{
+			display: none;
+		}
+	}
+}

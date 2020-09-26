@@ -1,0 +1,41 @@
+.cms-scroll-top {
+	height: 55px;
+    width: 55px;
+    background: $white;
+    color: $accent_color;
+    border: none;
+    position: fixed;
+    right: 15px;
+    bottom: -15px;
+    font-size: 18px;
+    line-height: 55px;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    z-index: 999;
+    visibility: hidden;
+    @include border-radius(50%);
+    @include box-shadow(5px 0 5px rgba(0, 0, 0, 0.1));
+    @include opacity(0);
+	&:hover, &:focus, &:active {
+		color: $white;
+		background: $accent_color;
+	}
+	&.on {
+		bottom: 15px;
+		visibility: visible;
+		@include opacity(1);
+	}
+	.cms-scroll-top-arrow{
+		display: block;
+	    width: 100%;
+	    position: relative;
+	    @include transform(rotate(-90deg));
+	    @include animation(vibrate 2s linear 0s infinite);
+	    &:before{
+	    	@include font-awesome("\f197", 900);
+	    }
+	}
+}

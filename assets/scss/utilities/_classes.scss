@@ -1,0 +1,48 @@
+// Block shadow 
+.cms-block-shadow{
+    @include css3-prefix('box-shadow', '0 10px 30px 0 rgba(50, 50, 50, .16)');
+    @include transition(all 0.5s linear);
+}
+// Box Shadow 
+.cms-box-shadow{
+    @include box-shadow('0 0px 0px 0 rgba(50, 50, 50, .16)');
+}
+// height
+.h-100{
+	height: 100%;
+}
+// width
+.w-100{
+	width: 100%;
+}
+.overflow-hidden{
+	overflow: hidden;
+}
+.overflow-visible{
+	overflow: visible;
+}
+// empty none
+.empty-none:empty{
+	display: none;
+}
+// Flip on RTL
+.rtl-flip{
+	[dir="rtl"] &{
+		@include flip();
+	}
+}
+// Center 
+.d-center{
+	position: relative;
+	left: 50%;
+	@include transform(translate(-50%, 0));
+}
+// clearfix
+.clearfix {
+	clear: both;
+	&:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+}

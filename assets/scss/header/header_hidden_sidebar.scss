@@ -1,0 +1,55 @@
+$hidden-sidebar-width: 460px;
+.cms-hidden-sidebar{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: $hidden-sidebar-width;
+	background: $white;
+	z-index: 10;
+	visibility: hidden;
+	@include opacity(0);
+	@include transform(translateX($hidden-sidebar-width));
+	@include transition();
+	@media (max-width: $screen-lg-max){
+		max-width: 320px;
+	}
+	[dir="rtl"] &{
+		right: auto;
+		left: 0;
+		@include transform(translateX(-$hidden-sidebar-width));
+	}
+	.cms-hidden-close{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		color: red;
+		cursor: pointer;
+		&:hover{
+			background: red;
+			color: $white;
+		}
+		[dir="rtl"] &{
+			right: auto;
+			left: 0;
+		}
+	}
+	&.open{
+		visibility: visible;
+		@include opacity(1);
+		@include transform(translateX(0));
+	}
+}
+.cms-header-hidden-sidebar{
+	[dir="rtl"] &{
+		@include transform(rotate(180deg));
+	}
+}
+// logged in user 
+.logged-in .cms-hidden-sidebar{
+	top: 32px;
+}

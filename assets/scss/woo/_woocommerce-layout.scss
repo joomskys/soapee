@@ -1,0 +1,61 @@
+/**
+ * woocommerce-layout.scss
+ * Applies layout to the default WooCommerce frontend design
+ */
+/**
+ * Cart page
+ */
+.cart-collaterals {
+}
+
+/**
+ * Cart sidebar
+ */
+ul.cart_list,
+ul.product_list_widget {
+}
+
+/**
+ * Forms
+ */
+form {
+	.form-row {
+		label {
+			flex: 0 0 100%;
+			display: block;
+			&.checkbox {
+				flex: 0 0 auto;
+				display: inline;
+			}
+		}
+	}
+	.password-input{
+		position: relative;
+	}
+	.show-password-input {
+		position: absolute;
+		right: 0.7em;
+		top: 0.7em;
+		cursor: pointer;
+	}
+	.show-password-input::after {
+		@include font-awesome( "\f06e" );
+	}
+	.show-password-input.display-password::after {
+		@include font-awesome( "\f070" );
+	}
+}
+
+#payment {}
+
+.woocommerce-billing-fields,
+.woocommerce-shipping-fields {}
+
+.woocommerce-terms-and-conditions {}
+
+/**
+ * oEmbeds
+ */
+.woocommerce-oembed {
+	position: relative;
+}

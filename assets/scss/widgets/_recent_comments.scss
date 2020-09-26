@@ -1,0 +1,8 @@
+.widget_recent_comments{
+	li{
+		padding: 5px 0;
+	}
+	a:not([class]){
+		color: $accent_color;
+	}
+}

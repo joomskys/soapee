@@ -1,0 +1,7 @@
+.product #comments{
+	padding-top: 0;
+	&:before,
+	&:after{
+		display: none;
+	}
+}

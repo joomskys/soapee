@@ -1,0 +1,26 @@
+@import 'header_top';
+@import 'header_logo';
+@import 'header_menu';
+@import 'header_attrs';
+@import 'header_hidden_sidebar';
+@import 'header_main';
+@import 'header_ontop';
+@import 'header_sticky';
+@import 'header_mobile';
+@import 'layout1';
+// Header Main
+//--------------------------------------------------
+.cms-header-wraps {
+	position: relative;
+	z-index: 2;
+	.row-flex {
+		align-items: center;
+	}
+	.cms-menu-right {
+		display: flex;
+		align-items:center;
+	}
+}
+#cms-header{
+	@include transition(all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s);
+}

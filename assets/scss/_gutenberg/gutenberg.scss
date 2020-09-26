@@ -1,0 +1,43 @@
+// Button
+.wp-block-button{
+	margin-bottom: 20px;
+}
+// Cover
+.wp-block-cover{
+	color: $white;
+}
+// paraggraph
+.single-post p{
+	&[class],
+	&[style]{
+		line-height: normal;
+	}	
+}
+// Block
+[class*="wp-block-"]{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	&:first-child{
+		margin-top: 0;
+	}
+	&:last-child{
+		margin-bottom: 0;
+	}
+	[class*="wp-block-"]{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+// Block Group 
+.wp-block-group{
+	&.has-background{
+		padding: 15px 20px;
+	}
+	.wp-block-button + *{
+		padding-top: 15px;
+	}
+}
+// RSS
+.wp-block-rss{
+	list-style: none;
+}

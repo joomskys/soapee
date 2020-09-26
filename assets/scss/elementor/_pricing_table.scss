@@ -1,0 +1,50 @@
+.cms-badge{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.cms-price-currency{
+	vertical-align: top;
+    line-height: 1;
+    transform: translateY(-5px);
+    position: relative;
+    display: inline-block;
+}
+.cms-pricing-list{
+	list-style: none;
+	margin: 18px 0;
+	padding: 0;
+	li{
+		padding: 10px 0;
+	}
+}
+.cms-pricing-title{
+	.title-image{
+		img{
+			vertical-align: middle;
+		}
+	}
+}
+.cms-pricing-price{
+	background-repeat: no-repeat;
+}
+/* .cms-pricing-layout-1{
+	.cms-pricing-price{
+		background-image: url("../images/bg-title-pricing1.png");
+		background-position: left bottom;
+	}
+} */
+.cms-pricing-layout-1,
+.cms-pricing-layout-2,
+.cms-pricing-layout-3{
+	.cms-pricing-price{
+		background-image: url("../images/bg-title-pricing2.png");
+		background-position: center bottom;
+	}
+}
+/* .cms-pricing-layout-3{
+	.cms-pricing-price{
+		background-image: url("../images/bg-title-pricing3.png");
+		background-position: right bottom;
+	}
+} */

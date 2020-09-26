@@ -1,0 +1,43 @@
+.cms-icon-box-layout-3 {
+	height: calc(100% + 30px)!important;
+	width: calc(100% + 30px)!important;
+	margin: -15px;
+	.elementor-widget-container{
+		height: 100%;
+	}
+}
+.cms-icon-box-layout3{
+}
+
+// layout 4
+.cms-icon-box-layout-4{
+	padding-top: 45px;
+}
+.cms-icon-box-layout4 {
+	background-color: #fff;
+	box-shadow: 0 1px 15px rgba(0,0,0,0.11);
+	padding: 70px 35px 34px 35px;
+}
+.cms-icon-box-layout4 .cms-icon-box-icon {
+	width: 90px;
+	height: 90px;
+	background-color: #1B55E3;
+	position: absolute;
+	border-radius: 100%;
+	top: -45px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.cms-icon-box-layout4 .cms-icon-box-icon img {
+	max-height: 40px;
+	width: auto;
+	filter: brightness(0) invert(1);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.cms-icon-box-layout4:hover {
+	transform: translateY(-24px);
+}

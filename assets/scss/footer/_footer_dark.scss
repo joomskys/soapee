@@ -1,0 +1,14 @@
+.cms-footer-dark{
+	color: $white-color;
+	@include background-gradient();
+	a:not([class]),
+	a.post-item{
+		color: $white-color;
+		&:hover{
+			color: $secondary_color;
+		}
+	}
+	.horizontal ul li:after{
+		background: $white-color;
+	}
+}

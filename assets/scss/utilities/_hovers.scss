@@ -1,0 +1,51 @@
+// Border hover
+.hover-border {
+    @include transition(color 0.25s);
+    &:before,
+    &:after{
+    	border: 3px solid transparent;
+	    width: 0;
+	    height: 0;
+    }
+    &:before {
+	    top: 0;
+	    left: 0;
+	}
+	&:after {
+	    bottom: 0;
+	    right: 0;
+	}
+	// hover
+	&:hover{
+		&:before,
+		&:after{
+			width: 100%;
+		    height: 100%;
+		    display: block;
+		}
+		&:before{
+			border-top-color: $accent_color;
+			border-right-color: $accent_color;
+			@include transition(width 0.25s ease-out, height 0.25s ease-out 0.25s);
+		}
+		&:after{
+			border-bottom-color: $accent_color;
+    		border-left-color: $accent_color;
+    		@include transition(border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s);
+		}
+	}
+}
+.hover-border-outer {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: block;
+    &:before,
+    &:after {
+	    box-sizing: inherit;
+	    content: '';
+	    position: absolute;
+	    z-index: -1;
+	    display: block;
+	}
+}

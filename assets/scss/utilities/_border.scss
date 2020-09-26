@@ -1,0 +1,89 @@
+//border color
+// styled in utilities/_color.scss
+
+//border width
+$border-width: (
+	0,
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10
+);
+@each $width in $border-width{
+	.bdr-#{$width}{
+		border-width: #{$width}px;
+	}
+	.bdr-t-#{$width} {
+	  	border-width: #{$width}px 0 0 0;
+	}
+	.bdr-r-#{$width} {
+	  	border-width: 0 #{$width}px 0 0;
+	}
+	.bdr-b-#{$width} {
+	  	border-width: 0 0 #{$width}px 0;
+	}
+	.bdr-l-#{$width} {
+	  	border-width: 0 0 0 #{$width}px;
+	}
+	.bdr-lr-#{$width} {
+	  	border-width: 0 #{$width}px 0 #{$width}px;
+	}
+	.bdr-tb-#{$width} {
+		border-width: #{$width}px 0 #{$width}px 0;
+	}
+}
+
+$border-style: (
+	'solid',
+	'dashed',
+	'dotted',
+	'double',
+	'groove',
+	'inset',
+	'outset',
+	'ridge'
+);
+@each $name in $border-style{
+	.bdr-#{$name}{
+		border-style: #{$name};
+	}
+	.bdr-t-#{$name} {
+	  	border-top-style: #{$name};
+	}
+	.bdr-r-#{$name} {
+	  	border-right-style: #{$name};
+	}
+	.bdr-b-#{$name} {
+	  	border-bottom-style: #{$name};
+	}
+	.bdr-l-#{$name} {
+	  	border-left-style: #{$name};
+	}
+}
+$border-radius: (
+	5: 5px,
+	10: 10px,
+	15: 15px,
+	20: 20px,
+	24: 24px,
+	25: 25px,
+	40: 40px
+);
+@each $name, $radius in $border-radius{
+	.bdr-radius-#{$name}{
+		@include border-radius($radius!important);
+	}
+}
+[class*="bdr-radius-"]{
+	overflow: hidden;
+}
+.circle,
+.elementor img.circle{
+	@include border-radius(50%);
+}

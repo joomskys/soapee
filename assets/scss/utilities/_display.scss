@@ -1,0 +1,17 @@
+/**
+ * Max widh to display
+*/
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-down($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .d-max#{$infix}-none         { display: none !important; }
+    .d-max#{$infix}-inline       { display: inline !important; }
+    .d-max#{$infix}-inline-block { display: inline-block !important; }
+    .d-max#{$infix}-block        { display: block !important; }
+    .d-max#{$infix}-table        { display: table !important; }
+    .d-max#{$infix}-table-row    { display: table-row !important; }
+    .d-max#{$infix}-table-cell   { display: table-cell !important; }
+    .d-max#{$infix}-flex         { display: flex !important; }
+    .d-max#{$infix}-inline-flex  { display: inline-flex !important; }
+  }
+}

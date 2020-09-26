@@ -1,0 +1,103 @@
+@mixin cms-show-overlay(){
+	visibility: visible;
+	@include opacity(1);
+}
+.cms-overlay-wrap{
+	position: relative;
+	overflow: hidden;
+	outline: none;
+	img{
+		@include transition();
+	}
+	.cms-overlay-content{
+		position: absolute;
+		top: 0;
+		right: 0;
+	    left: 0;
+	    bottom: 0;
+	    z-index: 2;
+	    visibility: hidden;
+	    @include opacity(0);
+	    @include transition();
+	    &:not([class*="bg-"]){
+	    	background: var(--primary-07);
+	    }
+	}
+	.cms-bottom-to-top{
+		@include transform(translateY(100%));
+	}
+	&:hover{
+		img{
+			@include transform(scale(1.1));
+		}
+		.cms-overlay-content{
+			@include cms-show-overlay();
+		}
+		.cms-bottom-to-top{
+			@include transform(translateY(0));
+		}
+	}
+	@media (max-width: $screen-md-max){
+		.cms-overlay-content{
+			@include cms-show-overlay();
+		}
+		.cms-bottom-to-top{
+			@include transform(translateY(0));
+		}
+	}
+	&.cms-overlay-bottom-to-top{
+		&:before{
+			height: 0;
+		}
+		&:hover{
+			&:before{
+				height: calc(100% - 20px);
+			}
+		}
+	}
+	&.cms-overlay-slideup{
+		.cms-overlay-content{
+			color: $white;
+			background: rgba(0,0,0,0.8);
+			@include transition(all 500ms linear);
+			@include transform(translateY(100%));
+			.entry-title{
+				color: $accent_color;
+				&:hover{
+					color: $white;
+					a{
+						color: inherit;
+					}
+				}
+			}
+		}
+		&:hover{
+			.cms-overlay-content{
+				@include transform(translateY(0));
+			}
+		}
+	}
+	&.cms-overlay-zoom-in{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0,0,0,0.4);
+		@include transform(scale(0));
+	}
+	&.cms-overlay-center-to-side{
+		left: 50%;
+		right: 50%;
+		background: rgba(0,0,0,0.4);
+	}
+	&:hover{
+		&.cms-overlay-zoom-in{
+			@include transform(scale(1));
+		}
+		&.cms-overlay-center-to-side{
+			left: 0;
+			right: 0;
+		}
+	}
+}

@@ -1,0 +1,87 @@
+// Headings
+//--------------------------------------------------
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.heading {
+  clear: both;
+  /* color: $heading-font-color;
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  letter-spacing: $heading-letter-spacing;
+  line-height: $heading-line-height; */
+  *{
+    color: inherit;
+  }
+  &:hover{
+    color: $heading-font-color-hover;
+    *{
+      color: inherit;
+    }
+  }
+  @each $weight, $name in $custom-font-weight {
+    &.font-#{$weight}{
+      body.cms-heading-font-default &{
+        font-family: $name !important;
+        font-weight: normal!important;
+        font-style: normal!important;
+      }
+    }
+  }
+}
+h1, h2, h3, h4, h5, h6{
+  margin: 0 0 15px;
+}
+
+h1, .h1 {
+  color: $heading-h1-typo-font-color;
+  font-family: $heading-h1-typo-font-family;
+  font-weight: $heading-h1-typo-font-weight;
+  font-size: $heading-h1-typo-font-size;
+  line-height: $heading-h1-typo-line-height;
+  letter-spacing: $heading-h1-typo-letter-spacing;
+}
+
+h2, .h2 {
+  color: $heading-h2-typo-font-color;
+  font-family: $heading-h2-typo-font-family;
+  font-weight: $heading-h2-typo-font-weight;
+  font-size: $heading-h2-typo-font-size;
+  line-height: $heading-h2-typo-line-height;
+  letter-spacing: $heading-h2-typo-letter-spacing;
+}
+
+h3, .h3 {
+  color: $heading-h3-typo-font-color;
+  font-family: $heading-h3-typo-font-family;
+  font-weight: $heading-h3-typo-font-weight;
+  font-size: $heading-h3-typo-font-size;
+  line-height: $heading-h3-typo-line-height;
+  letter-spacing: $heading-h3-typo-letter-spacing;
+}
+
+h4, .h4 {
+  color: $heading-h4-typo-font-color;
+  font-family: $heading-h4-typo-font-family;
+  font-weight: $heading-h4-typo-font-weight;
+  font-size: $heading-h4-typo-font-size;
+  line-height: $heading-h4-typo-line-height;
+  letter-spacing: $heading-h4-typo-letter-spacing;
+}
+
+h5, .h5 {
+  color: $heading-h5-typo-font-color;
+  font-family: $heading-h5-typo-font-family;
+  font-weight: $heading-h5-typo-font-weight;
+  font-size: $heading-h5-typo-font-size;
+  line-height: $heading-h5-typo-line-height;
+  letter-spacing: $heading-h5-typo-letter-spacing;
+}
+
+h6, .h6 {
+  color: $heading-h6-typo-font-color;
+  font-family: $heading-h6-typo-font-family;
+  font-weight: $heading-h6-typo-font-weight;
+  font-size: $heading-h6-typo-font-size;
+  line-height: $heading-h6-typo-line-height;
+  letter-spacing: $heading-h6-typo-letter-spacing;
+}

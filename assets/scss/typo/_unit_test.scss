@@ -1,0 +1,71 @@
+.bypostauthor,
+.sticky{
+	visibility: visible;
+}
+.screen-reader-text {
+    display: none;
+}
+.alignleft,
+.alignright,
+.aligncenter {
+    margin-top: 6px;
+    margin-bottom: 45px;
+}
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 35px;
+    [dir="rtl"] &{
+        float: right;
+        margin-right: 0;
+        margin-left: 35px;
+    }
+}
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 35px;
+    [dir="rtl"] &{
+        float: left;
+        margin-left: 0;
+        margin-right: 35px;
+    }
+}
+.aligncenter {
+    clear: both;
+    @include center-block;
+}
+.alignfull {
+    //position: relative;
+    //width: 100vw;
+    //left: 50%;
+    //transform: translate(-50%, 0);
+}
+// fix image align right in last child element
+.cms-single-page p:last-child{
+    clear: both;
+    img[class*="align"] {
+        margin-bottom: 0;
+    }
+}
+// blockquote
+blockquote{
+    padding: 0 0 0 1rem;
+    border-left: 5px solid var(--accent-color);
+    [dir="rtl"] &{
+        padding: 0 1rem 0 0;
+        border-left: 0;
+        border-right: 5px solid var(--accent-color);
+    }
+    &.has-text-align-right{
+        padding: 0 1rem 0 0;
+        border-left: 0;
+        border-right: 5px solid var(--accent-color);
+        [dir="rtl"] &{
+            padding: 0 0 0 1rem;
+            border-right: 0;
+            border-left: 5px solid var(--accent-color);
+            text-align: left;
+        }
+    }
+}

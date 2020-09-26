@@ -1,0 +1,193 @@
+/* CMS Button */
+.btn,
+button,
+.button,
+input[type="submit"],
+input[type="button"]{
+  position: relative;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  color: $button-font-color;
+  line-height: $button-line-height;
+  letter-spacing: $button-letter-spacing;
+  text-align: center;
+  background-color: $secondary-color;
+  padding: 12px 29px;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  vertical-align: top;
+  border: none;
+  @include border-radius(23px);
+  @include box-shadow($shadow-2);
+  @include transition();
+  &:hover, &:focus {
+    background: $primary_color;
+    color: $white;
+    outline: none;
+  }  
+  // outline
+  &.btn-outline{
+    background: transparent;
+    @each $name, $color in $theme_colors{
+      &.btn-#{$name} {
+        color: #{$color};
+        box-shadow: 0 0 0 3px #{$color} inset;
+        &:hover{
+          color: $white;
+          background-color: #{$color};
+        }
+      }
+    }
+  }
+  &.alt{
+    background: $primary_color;
+    &:hover{
+      background: $accent_color;
+    }
+  }
+}
+// Button size
+.btn-md{
+  padding: 7px 15px;
+  @include border-radius(18px);
+}
+.cms-btn-text{
+  ~ .cms-btn-icon{
+    margin-left: 15px;
+    [dir="rtl"] &{
+      margin-left: 0;
+      margin-right: 15px;
+    }
+  }
+}
+.cms-btn-icon{
+  ~ .cms-btn-text{
+    margin-left: 15px;
+    [dir="rtl"] &{
+      margin-left: 0;
+      margin-right: 15px;
+    }
+  }
+}
+.cms-loading-icon,
+.cms-added-icon{
+  display: none;
+}
+.loading{
+  .cms-loading-icon{
+    display: inline-block;
+  }
+  .cms-default-icon,
+  .cms-added-icon{
+    display: none;
+  }
+}
+.added{
+  .cms-added-icon{
+    display: inline-block;
+  }
+  .cms-default-icon,
+  .cms-loading-icon{
+    display: none;
+  }
+}
+
+@each $name, $color in $theme_colors{
+  .btn-#{$name} {
+    background: $color;
+    //color: $white-color;
+  }
+}
+// accent
+.btn-accent{
+  background: $accent-color;
+  color: $white-color;
+}
+// primary
+.btn-primary{
+  background: $primary-color;
+  color: $white-color;
+}
+// Secondary
+.btn-secondary{
+  background: $secondary-color;
+  color: $primary_color;
+}
+
+// Overlay button
+.btn-overlay{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+// Just text
+.btn-text{
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  color: $accent_color;
+  line-height: $button-line-height;
+  letter-spacing: $button-letter-spacing;
+  text-transform: uppercase;
+  .cms-btn-icon{
+    display: inline-block;
+    color: $secondary_color;
+    @include transition();
+    @include transform(scale(0));
+  }
+  &:hover{
+    .cms-btn-icon{
+      @include transform(scale(1));
+    }
+  }
+}
+// Video 
+.btn-video{
+  width: 105px;
+  height: 105px;
+  line-height: 73px;
+  font-size: 33px;
+  position: relative;
+  //background-color: $white;
+  color: $primary_color;
+  display: block;
+  text-align: center;
+  border: 16px solid rgba($white, 0.5);
+  @include border-radius(50%);
+  &:before,
+  &:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 65px;
+    @include transform(translate(-50%,-50%));
+    @include border-radius(50%);
+    @include box-shadow(0 0 0 0 rgba(255, 255, 255, .3));
+    @include animation(ripple 3s infinite);
+  }
+  &:before {
+    @include css3-prefix('animation-delay', .9s);
+  }
+  &:after {
+    @include css3-prefix('animation-delay', .6s);
+  }
+  .cms-play-video-icon{
+    width: 73px;
+    height: 73px;
+    line-height: 73px;
+    display: block;
+    background: $white;
+    @include border-radius(50%);
+    &:before{
+      @include font-zmdi('\f3aa');
+    }
+  }
+}

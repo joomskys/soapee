@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #ddd;
+  border-top: 0;
+  border-left: 0;
+  border-spacing: 0;
+  th, td{
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    text-align: start;
+    vertical-align: middle;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  th{
+    font-family: var(--heading-font-family);
+  }
+
+  + * {
+    margin-top: 20px;
+  }
+}

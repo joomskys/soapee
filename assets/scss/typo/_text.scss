@@ -1,0 +1,37 @@
+.text-center,
+.max-text-center{
+	text-align: center;
+}
+.text-uppercase{
+  text-transform: uppercase;
+}
+.text-capitalize{
+  text-transform: capitalize;
+}
+// underline
+.text-underline-2{
+  border-bottom: 2px solid var(--primary-07-color);
+}
+// align
+.text-right{
+  text-align: right;
+  [dir="rtl"] &{
+    text-align: left;
+  }
+}
+// Responsive alignment
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .text#{$infix}-center   { text-align: center; }
+    .text#{$infix}-start   { text-align: start; }
+    .text#{$infix}-end  { text-align: end; }
+  }
+
+  @include media-breakpoint-down($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .max-text#{$infix}-center   { text-align: center; }
+    .max-text#{$infix}-start   { text-align: start; }
+    .max-text#{$infix}-end  { text-align: end; }
+  }
+}

@@ -1,0 +1,77 @@
+#comments{
+	padding-top: 30px;
+	@include soapee_meta_separator_line('top');
+	.woocommerce-Reviews-title{
+		display: none;
+	}
+}
+.commentlist{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	.comment,
+	.review{
+		margin-top: 30px;
+	}
+	> .comment,
+	> .review{
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+	.comment-avatar img{
+		border: $comment-border;
+		@include border-radius($comment-radius);
+	}
+	.children{
+		list-style: none;
+		padding: 0 0 0 20px;
+		margin: 0;
+		[dir="rtl"] &{
+			padding: 0 20px 0 0;
+		}
+	}
+}
+// Respone Form 
+.comment-list-wrap + #respond,
+#comments + #review_form_wrapper , // respond on woo review
+.comment-body + .comment-respond {
+	margin-top: 30px;
+	padding-top: 30px;
+	@include soapee_meta_separator_line('top');
+}
+#respond{
+	.comment-reply-title{
+		margin-bottom: 25px;
+	}
+	#commentform{
+		> .row{
+			margin: -10px;
+			> .comment-form-field{
+				padding: 10px;
+			}
+			.comment-form-comment{
+				margin-top: 10px;
+			}
+		}
+	}
+	.comment-form-cookies-consent{
+		text-align: center;
+		padding-top: 15px;
+	}
+	.form-submit{
+		margin-top: 30px;
+		text-align: center;
+		input[name="submit"]{
+			width: auto;
+		}
+	}
+}
+#cancel-comment-reply-link{
+	padding-left: 30px;
+	color: red;
+	[dir="rtl"] & {
+		padding-left: 0;
+		padding-right: 30px;
+	}
+}

@@ -1,0 +1,33 @@
+.header-layout1{
+	.cms-header-logo{
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	#cms-primary-menu{
+		// level 1
+		> li > a{
+			white-space: nowrap;
+			@media (min-width: $screen-xl-min){
+				line-height: 93px;
+				display: inline-block;
+			}
+		}
+	}
+	@media (min-width: $screen-xxl-min){
+		.cms-main-navigation{
+			padding-right: 75px;
+			[dir="rtl"] &{
+				padding-right: 0;
+				padding-left: 75px;
+			}
+		}
+		.cms-header-btn{
+			margin-left: 15px;
+			[dir="rtl"] &{
+				margin-left: 0;
+				margin-right: 15px;
+			}
+		}
+	}
+}

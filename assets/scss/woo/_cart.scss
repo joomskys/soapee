@@ -1,0 +1,43 @@
+label[for="coupon_code"]{
+	display: none;
+}
+table.cart {
+	border: 0;
+	th,
+	.product-name{
+		font-size: 17px;
+		font-family: var(--heading-font-family);
+	}
+	td, th{
+		&:not(.product-name){
+			text-align: center;
+		}
+		&.product-subtotal{
+			border-right: 1px solid #ddd;
+		}
+	}
+	td{
+		&.actions{
+			border-right: 0;
+			border-left: 0;
+			border-bottom: 0;
+			padding: 0;
+			text-align: start;
+			> .coupon,
+			> button[name="update_cart"],
+			[type="hidden"]{
+				display: none!important;
+			}
+		}
+		.cms-cart-actions{
+		}
+
+	}
+	.product-thumbnail{
+		max-width: 100px;
+		width: 100px;
+	}
+}
+.cart-collaterals{
+	padding-top: 30px;
+}

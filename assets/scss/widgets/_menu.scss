@@ -1,0 +1,49 @@
+.widget_nav_menu {
+    ul.menu {
+        margin: 0 -15px;
+        overflow: hidden;
+        > li {
+            padding: 0 15px;
+        }
+    }
+    &.horizontal{
+        .menu{
+            display: flex;
+            flex-wrap: wrap;
+            margin: -8px;
+            li{
+                flex: 0 0 auto;
+                width: auto;
+                max-width: 100%;
+                padding: 8px;
+                a{
+                    padding: 0;
+                    display: inline-block;
+                    border-bottom: 1px solid transparent;
+                    &:hover{
+                        border-color: $secondary_color;
+                    }
+                }
+                &:after{
+                    content: '';
+                    width: 4px;
+                    height: 4px;
+                    display: inline-block;
+                    margin-left: 8px;
+                    @include border-radius(50%);
+                    
+                    [dir="rtl"] &{
+                        margin-left: 0;
+                        margin-right: 8px;
+                    }
+                }
+                &:last-child:after{
+                    display: none;
+                }
+            }
+        }
+        .sub-menu{
+            display: none;
+        }
+    }
+}

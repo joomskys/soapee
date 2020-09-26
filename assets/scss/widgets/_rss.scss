@@ -1,0 +1,23 @@
+.widget_rss{
+	ul{
+		margin: -15px;
+	}
+	li{
+		padding: 15px;
+	}
+	.rsswidget{
+		font-size: 125%;
+	}
+	.rss-date{
+		font-style: italic;
+		margin-bottom: 10px;
+		display: block;
+	}
+	.rssSummary{
+		margin-bottom: 10px;
+	}
+	cite{
+		font-weight: 700;
+		color: $accent_color;
+	}
+}

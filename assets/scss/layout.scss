@@ -1,0 +1,26 @@
+#cms-page{
+	overflow-x: hidden;
+}
+#cms-page,
+#cms-main{
+	position: relative;
+	//overflow-x: hidden;
+}
+.elementor-editor-active {
+	#cms-page{
+		overflow-x: visible;
+	}
+	#cms-main{
+		position: relative;
+		z-index: 10;
+	}
+}
+#cms-main{
+	padding: 50px 0;
+	body.elementor-page &{
+		padding: 0;
+	}
+	body.single-cms-case-study &{
+		padding: 30px 0 110px;
+	}
+}

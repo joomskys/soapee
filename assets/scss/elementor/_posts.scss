@@ -1,0 +1,46 @@
+/*
+ * All style for post item layout 
+*/
+.cms-post-item-title{
+	position: relative;
+	&.has-line{
+		&:before,
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 1px;
+			[dir="rtl"] &{
+				left: auto;
+				right: 0;
+			}
+		}
+		&:before{
+			width: 100%;
+			background: #c8c8c8;
+		}
+		&:after{
+			width: 30%;
+			background: $secondary_color;
+		}
+	}
+}
+// Layout 1
+// Layout 2
+.cms-post-layout-2{
+	.cms-overlay-content-inner{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		> * {
+			flex: 0 0 100%;
+			width: 100%;
+			max-width: 100%;
+		}
+		.cms-post-item-readmore{
+			align-self: flex-end;
+		}
+	}
+}

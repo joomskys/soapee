@@ -1,0 +1,53 @@
+.cms-navigation-attrs{}
+.cms-header-cart{
+	.widget_shopping_cart{
+		width: 320px;
+		position: absolute;
+		top: calc( 100% + 30px);
+		left: 0;
+		visibility: hidden;
+		@include opacity(0);
+		@include transition();
+		&.open{
+			top: 100%;
+			visibility: visible;
+			@include opacity(1);
+		}
+		[dir="rtl"] &{
+			left: auto;
+			right: 0;
+		}
+	}
+}
+// Header icon
+.header-icon {
+	width: 45px;
+	height: 45px;
+	display: inline-block;
+	color: $primary_color;
+	line-height: 43px;
+	text-align: center;
+	border: 1px solid $black-02_color;
+	background-color: rgb(244, 248, 255);
+	position: relative;
+	vertical-align: middle;
+	@include border-radius(50%);
+	&:hover{
+		background: $accent_color;
+		color: $white_color;
+		border-color: $accent_color;
+	}
+	> *{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+	}
+}
+// socials 
+.cms-header-socials{
+	margin: 0 -15px;
+	> * {
+		margin: 0 15px;
+	}
+}

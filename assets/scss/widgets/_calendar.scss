@@ -1,0 +1,20 @@
+table.wp-calendar-table{
+	border-spacing: 0;
+	caption{
+		font-size: 20px;
+		font-weight: 700;
+		margin-bottom: 15px;
+		color: var(--heading-font-color);
+	}
+	th,
+	td{
+		text-align: center;
+		border-right: 0;
+	}
+}
+.widget_calendar .wp-calendar-nav{
+	margin-top: 15px;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

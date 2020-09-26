@@ -1,0 +1,27 @@
+#cms-pagetitle{
+	background-color: var(--ptitle-background-color);
+	background-image: var(--ptitle-background-image);
+    background-size: var(--ptitle-background-size);
+    background-position: var(--ptitle-background-position);
+    background-repeat: var(--ptitle-background-repeat);
+    background-attachment: var(--ptitle-background-attachment);
+    color: var(--ptitle-text-color);
+    .container{
+    	z-index: 1;
+    }
+}
+.cms-page-title-inner{
+	padding: 138px 0  140px;
+}
+.cms-page-title-overlay{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: var(--ptitle-rgba);
+}
+
+@import "title";
+@import "breadcrumb";
+@import "layout1";

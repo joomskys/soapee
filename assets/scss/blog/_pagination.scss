@@ -1,0 +1,54 @@
+.navigation,
+.woocommerce-pagination{
+	text-align: center;
+	&:empty{
+		display: none;
+	}
+	.page-numbers,
+	.post-page-numbers{
+		width: 43px;
+		height: 43px;
+		line-height: 43px;
+		display: inline-block;
+		vertical-align: top;
+		text-align: center;
+		border: none;
+		font-size: $body-font-size-large;
+		font-weight: 600;
+		background: rgba($primary_color, 0.102);
+		@include border-radius(50%);
+		&:hover,
+		&.current{
+			border-color: $accent_color;
+			background: $accent_color;
+			color: $white;
+		}
+	}
+	.nav-next-icon{
+		&:before{
+			@include font-awesome("\f101");
+		}
+	}
+	.nav-prev-icon{
+		&:before{
+			@include font-awesome("\f100");
+		}
+	}
+	&.cms-page-links{
+		text-align: start;
+	}
+}
+
+// Single post next/preview
+.cms-single-next-prev-navigation{
+	> div {
+		> a{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 2
+		}
+	}
+}

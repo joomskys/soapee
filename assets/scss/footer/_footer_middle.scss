@@ -1,0 +1,39 @@
+.cms-footer-middle{
+	> .container{
+		position: relative;
+		z-index: 10;
+	}
+}
+.cms-footer-middle-img{
+	z-index: 0;
+	&.top-center,
+	&.bottom-center{
+		text-align: center;
+	}
+	&[class*="-left"],
+	&[class*="-right"]{
+		position: absolute;
+	}
+	&[class*="-left"]{
+		left: 0;
+		[dir="rtl"] &{
+			left: auto;
+			right: 0;
+			@include flip();
+		}
+	}
+	&[class*="-right"]{
+		right: 0;
+		[dir="rtl"] &{
+			right: auto;
+			left: 0;
+			@include flip();
+		}
+	}
+	&[class*="top-"]{
+		top: 0;
+	}
+	&[class*="bottom-"]{
+		bottom: 0;
+	}
+}

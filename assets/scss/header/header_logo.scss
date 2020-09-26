@@ -1,0 +1,50 @@
+.cms-header-logo{
+	a{
+		display: block;
+		max-width: var(--logo-width);
+	}
+	.logo-ontop,
+	.logo-sticky,
+	.logo-mobile{
+		display: none;
+	}
+	@media (max-width: $screen-lg-max){
+		.logo-default,
+		.logo-ontop,
+		.logo-sticky{
+			display: none!important;
+		}
+		.logo-mobile{
+			display: block;
+		}
+	}
+}
+// ontop
+.header-ontop .cms-header-logo{
+	.logo-ontop{
+		display: block;
+	}
+	.logo-default,
+	.logo-sticky{
+		display: none;
+	}
+}
+// sticky 
+.header-sticky .cms-header-logo{
+	.logo-sticky{
+		display: block;
+	}
+	.logo-default,
+	.logo-ontop{
+		display: none;
+	}
+}
+
+@media (max-width: $screen-lg-max){
+	.cms-header-logo{
+		.cms-logo{
+			max-width: var(--logo-width-sm);
+			max-height: var(--logo-height-sm);
+		}
+	}
+}

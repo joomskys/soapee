@@ -1,0 +1,57 @@
+// Theme Colors
+@each $name, $color in $theme_colors {
+	// link color
+	.link-#{$name} {
+		color: #{$color};
+		*{
+			color: inherit;
+		}
+	}
+	.link-hover-#{$name}{
+		&:hover{
+			color: #{$color};
+			*{
+				color: inherit;
+			}
+		}
+	}
+	// text color
+	.text-#{$name}{
+		color: #{$color}!important;
+		*:not(.btn){
+			color: inherit;
+		}
+	}
+	body *.text-hover-#{$name}:hover{
+		color: #{$color}!important;
+		*{
+			color: inherit;
+		}
+	}
+	// background color
+	.bg-#{$name},
+	.cms-bg-#{$name}{
+		background-color: #{$color};
+	}
+	.bg-hover-#{$name},
+	.cms-bg-hover-#{$name}{
+		&:hover{
+			background-color: #{$color};
+		}
+	}
+	// border color
+	.bdr-#{$name} {
+		border-color: #{$color};
+	}
+	.bdr-hover-#{$name}:hover{
+		border-color: #{$color};
+	}
+}
+// Gradient
+@each $name, $gradient in $theme_gradient{
+	.bg-gradient-#{$name}{
+		background-image: -moz-linear-gradient( #{$gradient});
+		background-image: -webkit-linear-gradient( #{$gradient});
+		background-image: -ms-linear-gradient( #{$gradient});
+	}
+}

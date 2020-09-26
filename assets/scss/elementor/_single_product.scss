@@ -1,0 +1,22 @@
+.cms-single-product{
+	.cms-product-regular-price{
+		ins{
+			display: none;
+		}
+	}
+	.cms-product-sale-price{
+		del{
+			display: none;
+		}
+	}
+	ins, del{
+		text-decoration: none;
+	}
+}
+
+// layout 1
+.cms-single-product-1:not(:last-child) .cms-single-product{
+	border-bottom: 1px solid $primary-150-color;
+	margin-bottom: 5px;
+	padding-bottom: 35px;
+}

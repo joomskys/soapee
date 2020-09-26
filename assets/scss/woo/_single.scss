@@ -1,0 +1,228 @@
+div.product {
+	div.summary{
+		float: none;
+		width: 100%;
+	}
+	// add-to-cart form
+	form.cart{
+		border-top: 1px solid var(--border-main-color);
+		border-bottom: 1px solid var(--border-main-color);
+		padding: 25px 0 0;
+		margin: 30px 0;
+		display: flex;
+	    flex-wrap: wrap;
+	    align-items: center;
+	    justify-content: space-between;
+	    &:before,
+	    &:after{
+	    	flex: 0 0 100%;
+	    	width: 100%;
+	    	margin: 0;
+	    }
+	    div.quantity{
+	    	float: none;
+	    	margin: 0;
+	    }
+	    > *{
+	    	margin-bottom: 25px!important;
+	    }
+	}
+	.cms-single-product-btn{
+		flex-wrap: wrap;
+		margin: -7.5px;
+		> *{
+			margin: 7.5px;
+			flex: 0 0 auto;
+		    width: auto;
+		    max-width: 100%;
+		}
+		.single_add_to_cart_button{
+			text-transform: uppercase;
+			font-weight: 600;
+			letter-spacing: 0.45px;
+			&:after{
+				margin-left: 15px;
+				@include font-awesome('\f290');
+			}
+		}
+	}
+}
+
+//product meta
+.cms-product-meta .cms-meta-item{
+	padding-bottom: 8px;
+	&:last-child{
+		padding-bottom: 0;
+	}
+	.cms-meta-label{
+		color: var(--primary-color);
+		text-transform: uppercase;
+		letter-spacing: 0.45px;
+		font-weight: 600;
+	}
+	a{
+		color: var(--body-color);
+		&:hover{
+			color: var(--accent-color);
+		}
+	}
+}
+// cart variations and grouped
+.variations {
+	border: 0;
+	td,
+	th {
+		border: 0;
+		vertical-align: middle;
+	}
+}
+.woocommerce-variation-description p {
+	margin-bottom: 1em;
+}
+.reset_variations {
+	visibility: hidden;
+	display: none;
+	color: red;
+	padding-top: 10px;
+	text-align: end;
+	&[style="visibility: visible; display: inline;"]{
+		display: block!important;
+	}
+}
+.wc-no-matching-variations {
+	display: none;
+}
+.single_variation_wrap{
+	border-top: 1px solid var(--border-main-color);
+	padding-top: 30px;
+	width: 100%;
+	display: block;
+	.woocommerce-variation-add-to-cart{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items:center;
+		.quantity{
+			flex-basic: basic;
+		}
+		.cms-single-product-btns{
+			flex: 0 0 auto;
+			width: auto;
+		}
+	}
+	.woocommerce-variation-price{
+		margin-bottom: 25px;
+	}
+}
+// Grouped 
+.group_table {
+	border: 0;
+	th, td{
+		border: 0;
+	}
+	.wc-grouped-product-add-to-cart-checkbox {
+		display: inline-block;
+		width: auto;
+		margin: 0 auto;
+		transform: scale(1.5, 1.5);
+	}
+}
+
+// Quantity
+.cms-quantity{
+	position: relative;
+	display: inline-block;
+	.quantity-button{
+		position: absolute;
+		right: 0;
+		width: 20px;
+		height: 17px;
+		line-height: 17px;
+		text-align: start;
+		font-size: 15px;
+		font-weight: 900;
+		color: var(--primary-color);
+		cursor: pointer;
+		[dir="rtl"] &{
+			right: auto;
+			left: 0;
+		}
+	}
+	.quantity-up{
+		top: 0;
+		&:before{
+			@include font-awesome("\f0d8");
+		}
+	}
+	.quantity-down{
+		bottom: 0;
+		&:before{
+			@include font-awesome("\f0d7");
+		}
+	}
+}
+.quantity .qty{
+	width: 60px;
+	height: 34px;
+	line-height: 34px;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 20px;
+	padding-left: inherit;
+	text-align: center;
+	@include border-radius(0);
+	[dir="rtl"] &{
+		padding-right: inherit;
+		padding-left: 20px;
+	}
+}
+// add to cart button
+.single_add_to_cart_button{
+	clear: both;
+}
+// shop attributes
+table.shop_attributes{
+	border: none;
+	td, th{
+		vertical-align: top;
+		font-style: normal;
+		padding: 6px 0;
+		border: 0;
+		width: unset;
+		background: transparent!important;
+		p{
+			padding: 0;
+		}
+	}
+}
+// related, upsell
+.products.related,
+.products.upsells,
+.cross-sells{
+	padding-top: 40px;
+	> h2{
+		letter-spacing: 0.8px;
+		text-align: center;
+		position: relative;
+		margin: 0 0 20px;
+		text-transform: capitalize;
+		@media (min-width: $screen-xl-min){
+			padding-top: 60px;
+			font-size: 40px;
+			line-height: 50px;
+			margin: 0 0 50px;
+		}
+		&:after{
+			content: '';
+			display: block;
+			width: 100px;
+			height: 3px;
+			background: $secondary_color;
+			margin: 20px auto 0;
+		}
+	}
+}
+
+.cms-single-product-summary-wrap > div > .product-title{
+	display: none;
+}

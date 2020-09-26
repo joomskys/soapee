@@ -1,0 +1,23 @@
+.cms-post-content{
+	ul:not(class),
+	ol:not(class){
+		list-style-position: inside;
+		padding-left: 0;
+		padding-right: 0;
+		li{
+			padding: 2px 0;
+		}
+		ul{
+			padding-left: 15px;
+			[dir="rtl"] &{
+				padding-left: 0;
+				padding-right: 15px;
+			}
+		}
+	}
+}
+.post-password-form{
+	input[name="post_password"]{
+		margin-bottom: 20px;
+	}
+}

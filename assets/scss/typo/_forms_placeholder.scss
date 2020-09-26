@@ -1,0 +1,31 @@
+@mixin soapee_form_placeholder(){
+    color: #777777;
+    font-size: 86.667%;
+    font-style: italic;
+    font-weight: 400;
+    opacity: 1;
+    text-overflow: ellipsis;
+}
+
+input::-moz-placeholder, 
+textarea::-moz-placeholder {
+    @include soapee_form_placeholder();
+}
+input::-webkit-input-placeholder, 
+textarea::-webkit-input-placeholder {
+    @include soapee_form_placeholder();
+}
+input::-o-placeholder, 
+textarea::-o-placeholder {
+    @include soapee_form_placeholder();
+}
+input::-ms-placeholder, 
+textarea::-ms-placeholder {
+    @include soapee_form_placeholder();
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    @include css3-prefix('appearance', 'none');
+    margin: 0; 
+}

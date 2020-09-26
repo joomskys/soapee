@@ -1,0 +1,40 @@
+// layout 1
+.cms-list-layout-1 .cms-list-item{
+	margin-bottom: 25px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+	.cms-list-title{
+		&:before{
+			content: '';
+			width: 4px; 
+			height: 4px;
+			margin-right: 5px;
+			display: inline-block;
+			background: $primary_color;
+			@include border-radius(50%);
+			@include transform(translateY(-3px));
+			[dir="rtl"] &{
+				margin-right: 0;
+				margin-left: 5px;
+			}
+		}
+	}
+}
+// layout 2
+.cms-list-layout-2 .cms-list-item{
+	padding-bottom: 15px;
+	&:last-child{
+		padding-bottom: 0;
+	}
+}
+// layout 3
+.cms-list-layout-3 .cms-list-item{
+	padding-bottom: 5px;
+	.cms-icon{
+		font-size: 13px;
+	}
+	&:last-child{
+		padding-bottom: 0;
+	}
+}

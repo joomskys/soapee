@@ -1,0 +1,148 @@
+$menu-item-space: 45px;
+$sub-menu-w: 320px;
+.cms-primary-menu{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	li{
+		position: relative;
+	}
+	ul, ol{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+}
+@media (min-width: $screen-xl-min){
+	#cms-primary-menu{
+		margin-left: $menu-item-space / -2;
+		margin-right: $menu-item-space / -2;
+		display: flex;
+		li{
+			flex: 0 0 100%;
+			width: 100%;
+			max-width: 100%;
+			// show sub menu
+			&:hover{
+				> .sub-menu{
+					top: 0;
+					z-index: 1;
+					visibility: visible;
+					@include opacity(1);
+				}
+			}
+		}
+		// Level 1
+		> li {
+			flex: 0 0 auto;
+			width: auto;
+			padding: 0 $menu-item-space /2;
+			letter-spacing: soapee_letter_spacing();
+			> .sub-menu{
+				left: 0;
+				[dir="rtl"] &{
+					left: auto;
+					right: 0;
+				}
+			}
+			&:hover > .sub-menu{
+				top: 100%;
+			}
+			> a{
+				.cms-menu-title{
+					position: relative;
+					padding-bottom: 10px;
+					&:after{
+						content: '';
+						display: block;
+						position: absolute;
+						left: 50%;
+						bottom: 0;
+						width: 0;
+						height: 3px;
+						@include transition();
+					}
+				}
+				&:hover{
+					.cms-menu-title{
+						&:after{
+							left: 0;
+							width: 100%;
+						}
+					}
+				}
+			}
+			&.current-menu-item,
+			&.current-menu-ancestor,
+			&:hover{
+				> a{
+					.cms-menu-title:after{
+						left: 0;
+						width: 100%;
+					}
+				}
+			}
+		}
+		// Level 2
+		.sub-menu{
+			width: $sub-menu-w;
+			color: var(--dropdown-regular);
+			background: var(--dropdown-bg);
+			position: absolute;
+			top: calc(100% + 30px);
+			left: 100%;
+			padding: 15px 0;
+			z-index: -1;
+			visibility: hidden;
+			@include opacity(0);
+			@include transition();
+			&.back{
+				left: auto;
+				right: 100%;
+			}
+			[dir="rtl"] &{
+				left: auto;
+				right: 100%;
+				&.back{
+					right: auto;
+					left: 100%;
+				}
+			}
+			a{
+				display: block;
+				padding: 5px $menu-item-space /2;
+				&:hover{
+					color: var(--dropdown-hover);
+				}
+			}
+			.current-menu-item,
+			.current-menu-ancestor{
+				> a{
+					color: var(--dropdown-active);
+				}
+			}
+			.cms-menu-title{
+				display: block;
+			}
+			// Parents arrow 
+			.cms-parent-menu-icon:before{
+				@include font-zmdi('\f2fb', 15px);
+			}
+		}
+		// Parents arrow 
+		.cms-parent-menu-icon{
+			float: right;
+			&:before{
+				margin-left: 5px;
+				@include font-zmdi('\f2f9', 15px);
+				[dir="rtl"] &{
+					margin-left: 0;
+					margin-right: 5px;
+				}
+			}
+			[dir="rtl"] &{
+				float: left;
+			}
+		}
+	}
+}

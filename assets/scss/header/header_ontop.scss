@@ -1,0 +1,24 @@
+.header-ontop{
+	background: var(--ontop-bg);
+	//  menu
+	.cms-primary-menu{
+		// level 1
+		> li {
+			> a{
+				color: var(--ontop-regular);
+				&:hover{
+					color: var(--ontop-hover);
+				}
+			}
+			&.current-menu-item > a{
+				color: var(--ontop-active);
+			}
+		}
+	}
+	.menu-color{
+		color: var(--ontop-regular);
+		&:hover{
+			color: var(--ontop-hover);
+		}
+	}
+}

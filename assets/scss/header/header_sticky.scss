@@ -1,0 +1,37 @@
+.header-sticky{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	background: var(--sticky-bg);
+	@include animation(0.95s ease 0s normal forwards 1 running headerSlideDown);
+	// menu 
+	.cms-primary-menu{
+		// level 1
+		> li {
+			> a{
+				color: var(--sticky-regular);
+				&:hover{
+					color: var(--sticky-hover);
+				}
+			}
+			&.current-menu-item > a{
+				color: var(--sticky-active);
+			}
+		}
+	}
+	.menu-color{
+		color: var(--sticky-regular);
+		&:hover{
+			color: var(--sticky-hover);
+		}
+	}
+}
+
+// logged in use 
+.logged-in{
+	.header-sticky{
+		top: 32px;
+	}
+}

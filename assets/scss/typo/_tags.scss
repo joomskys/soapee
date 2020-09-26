@@ -1,0 +1,9 @@
+a{
+	color: $link_regular_color;
+	&:hover{
+		color: $link_hover_color;
+	}
+	&:focus{
+		color: $link_active_color;
+	}
+}

@@ -1,0 +1,51 @@
+.cms-cf7-layout-1{
+	.wpcf7-form .wpcf7-form-control-wrap{
+		margin-bottom: 0px;
+	}
+	input, select, textarea{
+		border-color: #c8c8c8;
+		@include box-shadow(none);
+		&:hover,
+		&:active,
+		&:focus{
+			border-color: $accent_color;
+			@include box-shadow($shadow-1);
+		}
+	}
+}
+// Layout 2
+.cms-cf7-layout-2{
+	.wpcf7-form .wpcf7-form-control-wrap{
+		margin-bottom: 20px;
+	}
+	.cms-cf7-form-icon{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		color: #d0d0dd;
+		[dir="rtl"] &{
+			right: auto;
+			left: 0;
+		}
+	}
+	textarea{
+		height: 181px;
+	}
+}
+// Layout 3
+.cms-cf7-layout-3{
+	.wpcf7-form .wpcf7-form-control-wrap{
+		margin-bottom: 10px;
+	}
+}
+// Layout 4
+.cms-cf7-layout-4{
+	.wpcf7-form .wpcf7-form-control-wrap{
+		margin-bottom: 0;
+	}
+}
+// All style
+.wpcf7-submit-icon{
+	font-size: 15px;
+	padding-left: 5px;
+}

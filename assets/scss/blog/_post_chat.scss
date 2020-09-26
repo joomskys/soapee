@@ -1,0 +1,17 @@
+.format-chat{
+	.cms-post-content{
+		> p{
+			&:nth-child(odd){
+				text-align: start;
+				display: inline-block;
+				background: var(--accent-color);
+				color: $white;
+				@include border-radius(15px);
+				padding: 10px 15px;
+			}
+			&:nth-child(even){
+				text-align: end;
+			}
+		}
+	}
+}

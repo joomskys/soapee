@@ -1,0 +1,151 @@
+#payment {
+	margin-top: 30px;
+	ul.payment_methods {
+		padding: 20px;
+		margin: 0;
+		list-style: none outside;
+		background: $white;
+		li {
+			line-height: 2;
+			margin: 0;
+			input {
+				margin: 0 1em 0 0;
+			}
+			img {
+				vertical-align: middle;
+				padding: 0;
+				position: relative;
+				max-width: 150px;
+			}
+			img + img {
+				margin-left: 2px;
+			}
+		}
+	}
+
+	div.form-row {
+		padding: 20px;
+		margin-top: 30px;
+		background: $white;
+		#place_order{
+			margin-top: 30px;
+		}
+	}
+
+	div.payment_box {
+		position: relative;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 1em;
+		margin: 1em 0;
+		font-size: 0.92em;
+		border-radius: 2px;
+		line-height: 1.5;
+		background-color: darken($secondary, 5%);
+		color: $secondarytext;
+
+		.woocommerce-SavedPaymentMethods {
+			list-style: none outside;
+			margin: 0;
+
+			.woocommerce-SavedPaymentMethods-token,
+			.woocommerce-SavedPaymentMethods-new {
+				margin: 0 0 0.5em;
+
+				label {
+					cursor: pointer;
+				}
+			}
+
+			.woocommerce-SavedPaymentMethods-tokenInput {
+				vertical-align: middle;
+				margin: -3px 1em 0 0;
+				position: relative;
+			}
+		}
+
+		.wc-credit-card-form {
+			border: 0;
+			padding: 0;
+			margin: 1em 0 0;
+		}
+
+		.wc-credit-card-form-card-number,
+		.wc-credit-card-form-card-expiry,
+		.wc-credit-card-form-card-cvc {
+			font-size: 1.5em;
+			padding: 8px;
+			background-repeat: no-repeat;
+			background-position: right 0.618em center;
+			background-size: 32px 20px;
+
+			&.visa {
+				background-image: url("../images/icons/credit-cards/visa.svg");
+			}
+
+			&.mastercard {
+				background-image: url("../images/icons/credit-cards/mastercard.svg");
+			}
+
+			&.laser {
+				background-image: url("../images/icons/credit-cards/laser.svg");
+			}
+
+			&.dinersclub {
+				background-image: url("../images/icons/credit-cards/diners.svg");
+			}
+
+			&.maestro {
+				background-image: url("../images/icons/credit-cards/maestro.svg");
+			}
+
+			&.jcb {
+				background-image: url("../images/icons/credit-cards/jcb.svg");
+			}
+
+			&.amex {
+				background-image: url("../images/icons/credit-cards/amex.svg");
+			}
+
+			&.discover {
+				background-image: url("../images/icons/credit-cards/discover.svg");
+			}
+		}
+
+		span.help {
+			font-size: 0.857em;
+			color: $subtext;
+			font-weight: normal;
+		}
+
+		.form-row {
+			margin: 0 0 1em;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			border: 1em solid darken($secondary, 5%); /* arrow size / color */
+			border-right-color: transparent;
+			border-left-color: transparent;
+			border-top-color: transparent;
+			position: absolute;
+			top: -0.75em;
+			left: 0;
+			margin: -1em 0 0 2em;
+		}
+	}
+
+	.payment_method_paypal {
+		.about_paypal {
+			display: block;
+		}
+		img {
+			max-height: 52px;
+		}
+	}
+}

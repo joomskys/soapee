@@ -1,0 +1,40 @@
+.layout-work-together{
+	.cms-widget-inner{
+		background: $primary_color url('../images/bg-paper-plane.jpg') calc(100% - 50px) 100% no-repeat;
+		border-color: transparent;
+		border-width: 0;
+		color: $white;
+	}
+	.cms-widget-title {
+		border-bottom: 0;
+		background: transparent;
+		color: $white;
+		text-transform: uppercase;
+		margin-top: 25px;
+		margin-bottom: 0;
+		padding-bottom: 15px;
+	}
+	.cms-widget-content{
+		.description{
+			position: relative;
+			padding-bottom: 25px;
+			margin-bottom: 25px;
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100px;
+				height: 3px;
+				background: $secondary_color;
+			}
+		}
+	}
+	.cms-widget-button{
+		margin: 45px -20px -30px;
+		.btn{
+			@include border-radius-separate(0, 0, 15px, 15px);
+		}
+	}
+}

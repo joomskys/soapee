@@ -1,0 +1,49 @@
+.widget_categories,
+.widget_product_categories{
+	ul:not(.children){
+		[class*="sidebar-area"] &{
+			margin: -20px -20px -30px; // custom layout on sidebar area only
+		}
+	}
+	li{
+		font-weight: 600;
+		border-bottom: 1px solid $border-main-color;
+		@include transition();
+		&:last-child{
+			border-bottom: 0;
+		}
+		> a{
+			padding: 17px 20px;
+			&:hover{
+				background: $accent_color;
+				color: $white_color;
+				.count{
+					background: $white;
+					color: var(--accent-color);
+				}
+			}
+		}
+		&.current-cat{
+			> a{
+				background: $accent_color;
+				color: $white_color;
+				.count{
+					background: $white;
+					color: var(--accent-color);
+				}
+			}
+		}
+	}
+	ul, ol{
+		&.children{
+			padding-left: 0;
+			padding-right: 0;
+			a{
+				padding-left: 30px;
+			}
+			> li:first-child{
+				border-top: 1px solid $border-main-color;
+			}
+		}
+	}
+}
