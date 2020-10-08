@@ -187,7 +187,7 @@ if(!function_exists('soapee_configs')){
                 'font-color'            => '#444',    
                 'font-color-hover'      => 'var(--accent-color)',
                 'font-weight'           => '400'
-            ],
+            ], 
             // button 
             'button' => [
                 'font-family'       => soapee_get_opts('btn_typo',['font-family' => 'var(--heading-font-family)'])['font-family'],
