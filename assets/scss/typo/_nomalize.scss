@@ -157,6 +157,7 @@ img {
   height: auto;
   border-style: none;
   vertical-align: top;
+  @include transition();
 }
 
 /* Forms

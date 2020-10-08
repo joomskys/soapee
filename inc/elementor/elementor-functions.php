@@ -27,6 +27,58 @@ if(!function_exists('soapee_elementor_get_posts')){
             <div class="<?php echo esc_attr($item_wrap_class); ?>">
                 <?php
                 switch ($settings['item_layout']) {
+                    case '6': 
+                ?>
+                    <div class="cms-post-item-inner bg-white cms-box-shadow-13 cms-box-shadow-hover-14 cms-hover-zoom-img-1 cms-transition bdr-radius-15">
+                        <?php soapee_post_media([
+                            'id'                => $post->ID, 
+                            'thumbnail_size'    => $img_size,
+                            'default_thumb'     => true,
+                            'class'             => 'mb-0 overflow-hidden'.$args['media_class'],
+                            'img_class'         => 'w-100 '.$args['img_class']
+                        ]); ?>
+                        <div class="<?php echo trim(implode(' ', ['cms-post-item-content p-30', $args['content_class']])); ?>">
+                            <div class="cms-post-meta-2 mb-15 clearfix"><?php 
+                                soapee_post_category([
+                                    'post_id'   => $post->ID, 
+                                    'class'     => 'cms-category-style-2', 
+                                    'icon'      => '', 
+                                    'text'      => '', 
+                                    'separator' => ''
+                                ]);
+                                soapee_post_date(['id' => $post->ID, 'class' => '', 'icon' => '']);
+                            ?></div>
+                            <div class="cms-post-item-title h3 text-20 text-va-30 lh-26 pb-15"><a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php 
+                                    echo get_the_title($post->ID); 
+                            ?></a></div>
+                            <div class="mb-15 clearfix"><?php 
+                                soapee_post_author([
+                                    'class' => 'cms-author-style-2 mr-12'
+                                ]);
+                            ?></div>
+                            <?php if((int)$excerpt_lenght > 0): ?>
+                                <div class="cms-post-item-excerpt"><?php
+                                    if(!empty($post->post_excerpt)){
+                                        echo wp_trim_words( $post->post_excerpt, $excerpt_lenght, $settings['excerpt_more_text'] );
+                                    }
+                                    else{
+                                        $content = strip_shortcodes( $post->post_content );
+                                        $content = apply_filters( 'the_content', $content );
+                                        $content = str_replace(']]>', ']]&gt;', $content);
+                                        echo wp_trim_words( $content, $excerpt_lenght, $settings['excerpt_more_text'] );
+                                    }
+                                ?></div>
+                            <?php endif;
+                                soapee_elementor_button_render($widget, $settings, [
+                                    'class'     => trim(implode(' ',['cms-post-item-readmore mt-20 text-uppercase', $args['readmore_class']])),
+                                    'post_id'   => $post->ID,
+                                    'overwrite' => true
+                                ]); 
+                            ?>
+                        </div>
+                    </div>
+                <?php
+                    break;
                     case '4': 
                 ?>
                     <div class="cms-post-item-inner cms-shadow-12 bg-white bdr-radius-20">
@@ -252,31 +304,88 @@ if(!function_exists('soapee_elementor_get_post_grid')){
             ?>
             <div <?php etc_print_html($widget->get_render_attribute_string( 'item' )); ?>>
                 <div <?php etc_print_html($widget->get_render_attribute_string( 'item-inner' )); ?>>
-                    <?php soapee_post_media([
-                        'id'                => $post->ID, 
-                        'thumbnail_size'    => $img_size,
-                        'default_thumb'     => true,
-                        'class'             => 'mb-30',
-                        'img_class'         => 'bdr-radius-15 w-100'
-                    ]); ?>
-                    <div class="cms-grid-item-content">
-                        <div class="cms-grid-item-title h3 text-20 text-va-30 lh-26 pb-12 mb-12"><a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo get_the_title($post->ID); ?></a></div>
-                        <?php if((int)$excerpt_lenght > 0): ?>
-                            <div class="cms-grid-item-excerpt m-b30"><?php
-                                if(!empty($post->post_excerpt)){
-                                    echo wp_trim_words( $post->post_excerpt, $excerpt_lenght, $settings['excerpt_more_text'] );
-                                }
-                                else{
-                                    $content = strip_shortcodes( $post->post_content );
-                                    $content = apply_filters( 'the_content', $content );
-                                    $content = str_replace(']]>', ']]&gt;', $content);
+                    <?php switch ($settings['layout']) {
+                        case '6': 
+                    ?>
+                        <div class="bg-white cms-box-shadow-13 cms-box-shadow-hover-14 cms-hover-zoom-img-1 cms-transition bdr-radius-15">
+                            <?php soapee_post_media([
+                                'id'                => $post->ID, 
+                                'thumbnail_size'    => $img_size,
+                                'default_thumb'     => true,
+                                'class'             => 'mb-0 overflow-hidden'.$args['media_class'],
+                                'img_class'         => 'w-100 '.$args['img_class']
+                            ]); ?>
+                            <div class="<?php echo trim(implode(' ', ['cms-post-item-content p-30', $args['content_class']])); ?>">
+                                <div class="cms-post-meta-2 mb-15 clearfix"><?php 
+                                    soapee_post_category([
+                                        'post_id'   => $post->ID, 
+                                        'class'     => 'cms-category-style-2', 
+                                        'icon'      => '', 
+                                        'text'      => '', 
+                                        'separator' => ''
+                                    ]);
+                                    soapee_post_date(['id' => $post->ID, 'class' => '', 'icon' => '']);
+                                ?></div>
+                                <div class="cms-post-item-title h3 text-20 text-va-30 lh-26 pb-15"><a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php 
+                                        echo get_the_title($post->ID); 
+                                ?></a></div>
+                                <div class="mb-15 clearfix"><?php 
+                                    soapee_post_author([
+                                        'class' => 'cms-author-style-2 mr-12'
+                                    ]);
+                                ?></div>
+                                <?php if((int)$excerpt_lenght > 0): ?>
+                                    <div class="cms-post-item-excerpt"><?php
+                                        if(!empty($post->post_excerpt)){
+                                            echo wp_trim_words( $post->post_excerpt, $excerpt_lenght, $settings['excerpt_more_text'] );
+                                        }
+                                        else{
+                                            $content = strip_shortcodes( $post->post_content );
+                                            $content = apply_filters( 'the_content', $content );
+                                            $content = str_replace(']]>', ']]&gt;', $content);
+                                            echo wp_trim_words( $content, $excerpt_lenght, $settings['excerpt_more_text'] );
+                                        }
+                                    ?></div>
+                                <?php endif;
+                                    soapee_elementor_button_render($widget, $settings, [
+                                        'class'     => trim(implode(' ',['cms-post-item-readmore mt-20 text-uppercase', $args['readmore_class']])),
+                                        'post_id'   => $post->ID,
+                                        'overwrite' => true
+                                    ]); 
+                                ?>
+                            </div>
+                        </div>
+                    <?php
+                        break; 
+                        default : 
+                    ?>
+                        <?php soapee_post_media([
+                            'id'                => $post->ID, 
+                            'thumbnail_size'    => $img_size,
+                            'default_thumb'     => true,
+                            'class'             => 'mb-30',
+                            'img_class'         => 'bdr-radius-15 w-100'
+                        ]); ?>
+                        <div class="cms-grid-item-content">
+                            <div class="cms-grid-item-title h3 text-20 text-va-30 lh-26 pb-12 mb-12"><a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo get_the_title($post->ID); ?></a></div>
+                            <?php if((int)$excerpt_lenght > 0): ?>
+                                <div class="cms-grid-item-excerpt m-b30"><?php
+                                    if(!empty($post->post_excerpt)){
+                                        echo wp_trim_words( $post->post_excerpt, $excerpt_lenght, $settings['excerpt_more_text'] );
+                                    }
+                                    else{
+                                        $content = strip_shortcodes( $post->post_content );
+                                        $content = apply_filters( 'the_content', $content );
+                                        $content = str_replace(']]>', ']]&gt;', $content);
 
-                                    echo wp_trim_words( $content, $excerpt_lenght, $settings['excerpt_more_text'] );
-                                }
-                            ?></div>
-                        <?php endif; ?>
-                        <?php soapee_elementor_button_render($widget, $settings, ['class' => 'mt-20','post_id' => $post->ID,'overwrite' => true]); ?>
-                    </div>
+                                        echo wp_trim_words( $content, $excerpt_lenght, $settings['excerpt_more_text'] );
+                                    }
+                                ?></div>
+                            <?php endif; ?>
+                            <?php soapee_elementor_button_render($widget, $settings, ['class' => 'mt-20','post_id' => $post->ID,'overwrite' => true]); ?>
+                        </div>
+                    <?php break;
+                        } ?>
                 </div>
             </div>
         <?php

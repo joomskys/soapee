@@ -135,6 +135,10 @@ if(!function_exists('soapee_elementor_post_layout')){
             '5' => [
                 'label' => esc_html__( 'Layout 5', 'soapee' ),
                 'image' => get_template_directory_uri() . '/elementor/templates/layouts/posts/layout5.png'
+            ],
+            '6' => [
+                'label' => esc_html__( 'Layout 6', 'soapee' ),
+                'image' => get_template_directory_uri() . '/elementor/templates/layouts/posts/layout6.png'
             ]
         ];
     }

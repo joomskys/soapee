@@ -263,7 +263,7 @@
         /* ====================
          Scroll To Top
          ====================== */
-        $('.scroll-top').click(function () {
+        $('.cms-scroll-top').click(function () {
             $('html, body').animate({scrollTop: 0}, 800);
             return false;
         });
@@ -565,10 +565,10 @@
     function soapee_scroll_to_top() {
         'use strict';
         if (scroll_top < window_height) {
-            $('.scroll-top').addClass('off').removeClass('on');
+            $('.cms-scroll-top').addClass('off').removeClass('on');
         }
         if (scroll_top > window_height) {
-            $('.scroll-top').addClass('on').removeClass('off');
+            $('.cms-scroll-top').addClass('on').removeClass('off');
         }
     }
     /** ============

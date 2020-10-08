@@ -183,7 +183,7 @@ if(!function_exists('soapee_backtotop')){
     $back_totop_on = soapee_get_opt('back_totop_on', true);
     if (!$back_totop_on) return;
     ?>
-        <a href="#" class="scroll-top"><span class="cms-scroll-top-arrow cms-scroll-top-icon"></span></a>
+        <a href="#" class="cms-scroll-top"><span class="cms-scroll-top-arrow cms-scroll-top-icon"></span></a>
     <?php 
    } 
 }

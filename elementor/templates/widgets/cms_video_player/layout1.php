@@ -1,5 +1,17 @@
-<div class="cms-video-player relative d-inline-block">
-    <?php soapee_elementor_image_render2($settings, 'video_image_overlay', ['class' => 'rtl-flip']); ?>
+<?php
+$img_bg = $settings['video_image_as_background'];
+if($img_bg === 'true'){
+    $classes = 'opacity-0';
+    $display = 'd-block';
+    $bg = 'background-image:url("'.$settings['video_image_overlay']['url'].'")';
+} else {
+    $classes = '';
+    $display = 'd-inline-block';
+    $bg = '';
+}
+?>
+<div class="cms-video-player relative <?php echo esc_attr($display);?>" style="<?php echo esc_attr($bg);?>">
+    <?php soapee_elementor_image_render2($settings, 'video_image_overlay', ['class' => 'rtl-flip '.$classes]); ?>
     <?php if(!empty($settings['video_link'])) : ?>
         <div class="btn-video-wrap">
             <a class="btn-video" href="<?php echo esc_url($settings['video_link']); ?>">

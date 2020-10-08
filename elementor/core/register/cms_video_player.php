@@ -6,7 +6,13 @@ etc_add_custom_widget(
         'title'      => esc_html__('CMS Video Player', 'soapee' ),
         'icon'       => 'eicon-play',
         'categories' => array( Elementor_Theme_Core::ETC_CATEGORY_NAME ),
-        'scripts'    => array(),
+        'scripts'    => array(
+            'jquery',
+            'magnific-popup'
+        ),
+        'styles'     => array(
+            'magnific-popup'
+        ),
         'params'     => array(
             'sections' => array(
                 array(
@@ -76,7 +82,13 @@ etc_add_custom_widget(
                             'control_type' => 'group',
                             'default'      => 'full',
                             'separator'    => 'none',
-                        )
+                        ),
+                        array(
+                            'name'    => 'video_image_as_background',
+                            'label'   => esc_html__( 'Make Image as Background', 'soapee' ),
+                            'type'    => \Elementor\Controls_Manager::SWITCHER,
+                            'default' => 'false',
+                        ),
                     )
                 ),
                 array(

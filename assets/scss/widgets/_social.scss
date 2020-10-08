@@ -78,6 +78,28 @@
 	}
 }
 
+.cms-social-style3{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: -5px;
+	> a{
+		flex: 0 0 45px;
+		width: 45px;
+		height: 45px;
+		line-height: 45px;
+		margin: 5px;
+		background-color: $secondary-color;
+		color: $primary-color;
+		@include border-radius(50%);
+		&:hover{
+			background-color: $primary-color;
+			color: $white;
+			@include box-shadow('2px 12px 21px 0px rgba(0,0,0,.3)');
+		}
+	}
+}
+
 .cms-social-colored{
 	a{
 		@include soapee_social_color();

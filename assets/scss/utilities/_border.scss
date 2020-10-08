@@ -80,6 +80,11 @@ $border-radius: (
 		@include border-radius($radius!important);
 	}
 }
+@each $name, $radius in $border-radius{
+	.bdr-radius-t-#{$name}{
+		@include border-radius($radius $radius 0 0!important);
+	}
+}
 [class*="bdr-radius-"]{
 	overflow: hidden;
 }

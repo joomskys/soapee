@@ -58,3 +58,51 @@
 		}
 	}
 }
+// post meta style 
+.cms-post-meta-2 {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -5px;
+	align-items: center;
+	> span{
+		flex: 0 0 auto;
+		padding: 0 5px;
+	}
+}
+// meta category style
+.cms-category-style-2{
+	overflow: hidden;
+	.cms-category-list{
+		display: flex;
+		flex-wrap: wrap;
+		margin: -2px;
+		>a{
+			flex: 0 0 auto;
+			margin: 2px;
+		}
+	}
+	a{
+		background-color: $accent-color;
+		color: $white;
+		padding: 5px 10px;
+		@include border-radius(4px);
+		&:hover{
+			background-color: $secondary-color;
+			color: $primary-color;
+		}
+	}
+}
+// Meta Author style 
+.cms-author-style-2{
+	.meta-icon{
+		background: #f3f4f7;
+	    border-radius: 50%;
+	    color: $primary-color;
+	    display: inline-block;
+	    width: 30px;
+	    height: 30px;
+	    line-height: 30px;
+	    text-align: center;
+	    font-size: 12px;
+	}
+}

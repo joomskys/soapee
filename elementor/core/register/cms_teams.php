@@ -33,6 +33,10 @@ etc_add_custom_widget(
                                 '2' => [
                                     'label' => esc_html__( 'Layout 2', 'soapee' ),
                                     'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_teams/layout/layout2.png'
+                                ],
+                                '3' => [
+                                    'label' => esc_html__( 'Layout 3', 'soapee' ),
+                                    'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_teams/layout/layout3.png'
                                 ]
                             ],
                             'prefix_class' => 'cms-team-layout-',

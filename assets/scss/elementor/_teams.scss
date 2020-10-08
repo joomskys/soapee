@@ -29,3 +29,12 @@
 		}
 	}
 }
+
+.cms-team-layout-3{
+	img.team-img{
+		background-color: #f6f9fe;
+	}
+	.cms-team-item:hover .team-image{
+		@include transform(translateY(10px));
+	}
+}

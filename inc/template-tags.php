@@ -496,7 +496,7 @@ if(!function_exists('soapee_post_author')){
             <?php 
                 // author icon
                 $icon_class = implode(' ', ['meta-icon', $args['icon'], $args['icon_class']]);
-                if(!empty($args['icon'])) echo '<span class="'.esc_attr($icon_class).'">&nbsp;</span>';
+                if(!empty($args['icon'])) echo '<span class="'.esc_attr($icon_class).'"></span>&nbsp;';
                 // Author text
                 if(!empty($args['text'])):  echo '<span>'.esc_html($args['text']).'&nbsp;</span>'; endif; 
                 // Author name
@@ -530,7 +530,7 @@ if(!function_exists('soapee_post_category')){
                 // cat text
                 if(!empty($args['text'])):  echo '<span>'.esc_html($args['text']).'&nbsp;</span>'; endif; 
                 // cat list
-                the_terms( $args['post_id'], $args['taxo'], '<span>', $args['separator'], '</span>' );
+                the_terms( $args['post_id'], $args['taxo'], '<span class="cms-category-list">', $args['separator'], '</span>' );
             ?>
         </span>
     <?php

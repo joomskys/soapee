@@ -49,3 +49,9 @@
 	    display: block;
 	}
 }
+
+.cms-hover-zoom-img-1{
+	&:hover img{
+		@include transform(scale(1.1));
+	}
+}
