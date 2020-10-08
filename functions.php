@@ -184,7 +184,7 @@ if(!function_exists('soapee_configs')){
             'meta' => [
                 'font-family'           => 'var(--body-font-family)',
                 'font-size'             => 'var(--body-font-size)',   
-                'font-color'            => '#555',    
+                'font-color'            => '#444',    
                 'font-color-hover'      => 'var(--accent-color)',
                 'font-weight'           => '400'
             ],
