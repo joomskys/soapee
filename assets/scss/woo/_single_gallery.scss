@@ -9,11 +9,7 @@
 	background: var(--grey-f1f1f5-color);
 	text-align: center;
 	@media (min-width: $screen-md-min){
-		min-height: 582px;
-		.woocommerce-product-gallery__wrapper{
-			top: 81px;
-			position: relative;
-		}
+		padding: 81px 0;
 	}
 	.woocommerce-product-gallery__trigger{
 		position: absolute;
