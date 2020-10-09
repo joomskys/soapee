@@ -10,6 +10,9 @@
 	text-align: center;
 	@media (min-width: $screen-md-min){
 		min-height: 582px;
+		.flex-viewport{
+			top: 81px;
+		}
 	}
 	.woocommerce-product-gallery__trigger{
 		position: absolute;
