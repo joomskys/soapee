@@ -2,14 +2,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Soapee\n"
-"POT-Creation-Date: 2020-07-11 09:16+0700\n"
+"POT-Creation-Date: 2020-10-08 17:14+0700\n"
 "PO-Revision-Date: 2020-07-11 09:16+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8\n"
+"X-Generator: Poedit 2.0.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -162,8 +162,7 @@ msgstr ""
 
 #: elementor/core/move/cms_accordion.php:30
 #: elementor/core/move/cms_blockquotes.php:30
-#: elementor/core/move/cms_button.php:27
-#: elementor/core/move/cms_heading.php:30
+#: elementor/core/move/cms_button.php:27 elementor/core/move/cms_heading.php:30
 #: elementor/core/move/cms_icon_box.php:31
 #: elementor/core/move/cms_image_box.php:27
 #: elementor/core/move/cms_pie_charts.php:32
@@ -244,8 +243,7 @@ msgstr ""
 #: elementor/core/move/cms_pricing_table.php:467
 #: elementor/core/move/cms_progressbar.php:46
 #: elementor/core/move/cms_testimonials.php:240
-#: elementor/core/move/cms_toggle.php:61
-#: elementor/core/move/cms_toggle.php:161
+#: elementor/core/move/cms_toggle.php:61 elementor/core/move/cms_toggle.php:161
 #: elementor/core/register/cms_accordion.php:65
 #: elementor/core/register/cms_counter.php:104
 #: elementor/core/register/cms_counter.php:196
@@ -272,8 +270,7 @@ msgstr ""
 #: elementor/core/move/cms_image_box.php:226
 #: elementor/core/move/cms_testimonials.php:42
 #: elementor/core/move/cms_testimonials.php:208
-#: elementor/core/move/cms_toggle.php:66
-#: elementor/core/move/cms_toggle.php:275
+#: elementor/core/move/cms_toggle.php:66 elementor/core/move/cms_toggle.php:275
 #: elementor/core/register/cms_accordion.php:80
 #: elementor/core/register/cms_tabs.php:71
 #: elementor/core/register/cms_tabs.php:197
@@ -290,15 +287,13 @@ msgstr ""
 #: elementor/core/move/cms_button.php:93
 #: elementor/core/move/cms_counter.php:113
 #: elementor/core/move/cms_counter.php:123
-#: elementor/core/move/cms_icon_box.php:49
-#: elementor/core/move/cms_icons.php:21
+#: elementor/core/move/cms_icon_box.php:49 elementor/core/move/cms_icons.php:21
 #: elementor/core/move/cms_pricing_table.php:27
 #: elementor/core/move/cms_pricing_table.php:161
 #: elementor/core/move/cms_pricing_table.php:290
 #: elementor/core/move/cms_pricing_table.php:335
 #: elementor/core/move/cms_pricing_table.php:788
-#: elementor/core/move/cms_toggle.php:76
-#: elementor/core/move/cms_toggle.php:207
+#: elementor/core/move/cms_toggle.php:76 elementor/core/move/cms_toggle.php:207
 #: elementor/core/register/cms_accordion.php:90
 #: elementor/core/register/cms_counter.php:121
 #: elementor/core/register/cms_counter.php:131
@@ -512,8 +507,7 @@ msgstr ""
 msgid "Danger"
 msgstr ""
 
-#: elementor/core/move/cms_alert.php:54
-#: elementor/core/move/cms_icon_box.php:59
+#: elementor/core/move/cms_alert.php:54 elementor/core/move/cms_icon_box.php:59
 #: elementor/core/move/cms_image_box.php:54
 #: elementor/core/register/cms_icon_box.php:62
 #: elementor/core/register/cms_tabs.php:53
@@ -700,8 +694,7 @@ msgstr ""
 #: elementor/core/move/cms_pricing_table.php:242
 #: elementor/core/move/cms_testimonials.php:77
 #: elementor/core/register/cms_pricing_table.php:207
-#: inc/theme-options/page-options.php:65
-#: inc/theme-options/page-options.php:365
+#: inc/theme-options/page-options.php:65 inc/theme-options/page-options.php:365
 msgid "Link"
 msgstr ""
 
@@ -892,8 +885,7 @@ msgid "Enter your sub title"
 msgstr ""
 
 #: elementor/core/move/cms_call_to_action.php:47
-#: elementor/core/move/cms_heading.php:6
-#: elementor/core/move/cms_heading.php:44
+#: elementor/core/move/cms_heading.php:6 elementor/core/move/cms_heading.php:44
 #: elementor/core/register/cms_heading.php:44
 msgid "Heading"
 msgstr ""
@@ -1158,8 +1150,7 @@ msgstr ""
 msgid "Direction"
 msgstr ""
 
-#: elementor/core/move/cms_counter.php:6
-#: elementor/core/move/cms_counter.php:37
+#: elementor/core/move/cms_counter.php:6 elementor/core/move/cms_counter.php:37
 #: elementor/core/move/cms_counter.php:99
 #: elementor/core/register/cms_counter.php:45
 #: elementor/core/register/cms_counter.php:107
@@ -1243,8 +1234,7 @@ msgstr ""
 msgid "No contact forms found"
 msgstr ""
 
-#: elementor/core/move/cms_ctf7.php:20
-#: inc/theme-options/require-plugins.php:65
+#: elementor/core/move/cms_ctf7.php:20 inc/theme-options/require-plugins.php:65
 msgid "Contact Form 7"
 msgstr ""
 
@@ -1578,8 +1568,7 @@ msgid "Description Style"
 msgstr ""
 
 #: elementor/core/move/cms_icon_box.php:6
-#: elementor/core/move/cms_icon_box.php:44
-#: elementor/core/move/cms_icons.php:16
+#: elementor/core/move/cms_icon_box.php:44 elementor/core/move/cms_icons.php:16
 #: elementor/core/register/cms_icon_box.php:47
 msgid "Icon Box"
 msgstr ""
@@ -3035,8 +3024,7 @@ msgid "Subtitle"
 msgstr ""
 
 #: inc/template-functions.php:319 inc/template-functions.php:320
-#: inc/theme-options/page-options.php:96
-#: inc/theme-options/page-options.php:332
+#: inc/theme-options/page-options.php:96 inc/theme-options/page-options.php:332
 msgid "Gallery"
 msgstr ""
 
@@ -3478,18 +3466,15 @@ msgstr ""
 msgid "Page Settings"
 msgstr ""
 
-#: inc/theme-options/page-options.php:54
-#: inc/theme-options/page-options.php:351
+#: inc/theme-options/page-options.php:54 inc/theme-options/page-options.php:351
 msgid "Audio"
 msgstr ""
 
-#: inc/theme-options/page-options.php:75
-#: inc/theme-options/page-options.php:378
+#: inc/theme-options/page-options.php:75 inc/theme-options/page-options.php:378
 msgid "Quote"
 msgstr ""
 
-#: inc/theme-options/page-options.php:85
-#: inc/theme-options/page-options.php:306
+#: inc/theme-options/page-options.php:85 inc/theme-options/page-options.php:306
 msgid "Video"
 msgstr ""
 
