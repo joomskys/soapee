@@ -37,7 +37,7 @@
 	    bottom: -15px;
 	    box-shadow: 0px 2px 9.5px 0.5px rgba(22, 19, 87, 0.15);
 	    background: #fff;
-	    transform: rotate(45deg);
+	    @include transform(rotate(45deg));
 	}
 	.cms-ttmn-item-inner2{
 		position: relative;

@@ -16,7 +16,7 @@ $widget->add_render_attribute( 'inner', [
                     $thumbnail = $img['thumbnail'];
                     ?>
                         <div class="cms-ttmn-item cms-slick-slide slick-slide" style="padding-left: <?php echo esc_attr($settings['slides_gutter']/2);?>px; padding-right: <?php echo esc_attr($settings['slides_gutter']/2);?>px;">
-                            <div class="cms-ttmn-item-inner cms-shadow-3 cms-shadow-hover-4 bg-white bdr-radius-25 cms-transition">
+                            <div class="cms-ttmn-item-inner cms-shadow-3 cms-shadow-hover-4 bg-white bdr-radius-25 cms-transition overflow-visible">
                                 <div class="cms-ttmn-item-inner2 bg-white p-tb-65 p-lr-25 p-lr-md-80">
                                     <span class="cms-ttmn-quote-icon cms-ttmn-quote-icon-tl"></span>
                                     <div class="cms-ttmn-desc font-600 text-primary text-center"><?php echo esc_html($value['description']); ?></div>
