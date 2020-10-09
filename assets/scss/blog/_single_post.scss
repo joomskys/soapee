@@ -4,10 +4,14 @@
 		list-style-position: inside;
 		padding-left: 0;
 		padding-right: 0;
+		margin-bottom: 0;
+		+ h2{
+			margin-top: 20px;
+		}
 		li{
 			padding: 2px 0;
 		}
-		ul{
+		ul, ol{
 			padding-left: 15px;
 			[dir="rtl"] &{
 				padding-left: 0;
