@@ -389,7 +389,7 @@ if ( ! function_exists( 'soapee_setup' ) ) {
         // Set post thumbnail size.
         set_post_thumbnail_size( soapee_configs('thumbnail')['post_thumbnail_size_w'], soapee_configs('thumbnail')['post_thumbnail_size_h'] );
         // Add custom image size used in Cover Template.
-        add_image_size( 'medium_large', soapee_configs('thumbnail')['medium_large_size_w'], soapee_configs('thumbnail')['medium_large_size_h'], true );
+        add_image_size( 'soapee_medium_large', soapee_configs('thumbnail')['medium_large_size_w'], soapee_configs('thumbnail')['medium_large_size_h'], true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -442,7 +442,7 @@ if(!function_exists('soapee_custom_sizes')){
     add_filter('image_size_names_choose','soapee_custom_sizes');
     function soapee_custom_sizes($sizes){
         return array_merge($sizes, array(
-            'medium_large' => esc_html__('Medium Large', 'soapee')
+            'soapee_medium_large' => esc_html__('Medium Large', 'soapee')
         ));
     }
 }

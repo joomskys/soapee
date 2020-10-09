@@ -619,25 +619,25 @@ if ( ! function_exists( 'soapee_post_meta' ) ) :
         $loop_class = soapee_is_loop() ? 'loop' : '';
         if($args['show_author'] || $args['show_cat'] || $args['show_cmt'] || $args['show_date']) : ?>
             <div class="<?php echo trim(implode(' ', ['cms-post-meta', $loop_class, $args['class']])); ?>">
-                <div class="cms-post-meta-inner row gutters-md-20">
+                <div class="cms-post-meta-inner row gutters-md-10">
                     <?php 
                         soapee_post_date([
                             'date_format' => $args['date_format'],
-                            'class'       => 'col-auto '.$args['item_class']
+                            'class'       => 'col-auto p-tb-0 '.$args['item_class']
                         ]);
                         soapee_post_category([
                             'show_cat' => $args['show_cat'],
-                            'class'    => 'col-auto '.$args['item_class'],
+                            'class'    => 'col-auto p-tb-0 '.$args['item_class'],
                             'post_id'  => $args['post_id'],
                         ]);
                         soapee_post_comment([
                             'show_cmt' => $args['show_cmt'],
-                            'class'    => 'col-auto '.$args['item_class'],  
+                            'class'    => 'col-auto p-tb-0 '.$args['item_class'],  
                             'text'     => ''
                         ]);
                         soapee_post_author([
                             'show_author' => $args['show_author'],
-                            'class'       => 'col-auto '.$args['item_class']
+                            'class'       => 'col-auto p-tb-0 '.$args['item_class']
                         ]); 
                     ?>
                 </div>

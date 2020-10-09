@@ -63,10 +63,10 @@ class CS_Social_Widget extends WP_Widget {
         if( strpos($before_widget, 'class') === false ) {
             $before_widget = str_replace('>', $before_widget);
         }
-        echo ''.$before_widget;
+        printf('%s', $before_widget);
 
         if (!empty($title))
-                echo ''.$before_title . $title . $after_title;
+                printf('%1$S %2$s %3$s', $before_title , $title , $after_title);
 
             echo '<div class="cms-social layout-'.$layout.'">';
 
@@ -124,7 +124,7 @@ class CS_Social_Widget extends WP_Widget {
 
             echo "</div>";
 
-        echo ''.$after_widget;
+        printf('%s', $after_widget);
     }
 
     function update( $new_instance, $old_instance ) {

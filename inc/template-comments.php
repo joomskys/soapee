@@ -26,7 +26,7 @@ function soapee_comment_list( $comment, $args, $depth ) {
         $add_below = 'div-comment';
     }
 	?>
-    <<?php echo ''.$tag ?> <?php comment_class(  empty( $args['has_children'] ) ? 'comment' : 'comment parent' ) ?> id="comment-<?php comment_ID() ?>">
+    <<?php echo esc_html($tag) ?> <?php comment_class(  empty( $args['has_children'] ) ? 'comment' : 'comment parent' ) ?> id="comment-<?php comment_ID() ?>">
     <?php if ( 'div' != $args['style'] ) : ?>
         <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 		<?php endif; ?>

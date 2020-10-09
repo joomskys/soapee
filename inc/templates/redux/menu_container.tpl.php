@@ -40,7 +40,7 @@ global $cms_theme_options;
                 }
 
                 if ( false == $skip_sec ) {
-                    echo ''.$this->parent->section_menu ( $k, $section );
+                    printf('%s', $this->parent->section_menu ( $k, $section ));
                     $skip_sec = false;
                 }
             }

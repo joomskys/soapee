@@ -27,8 +27,8 @@ if(!function_exists('soapee_archive_count_span')){
     add_filter('get_archives_link', 'soapee_archive_count_span');
     function soapee_archive_count_span($links) {
         $links = str_replace('<li>', '<li class="cms-menu-item">', $links);
-        $links = str_replace('</a>&nbsp;(', ' <span class="count">(', $links);
-        $links = str_replace(')</li>', ')</span></a></li>', $links);
+        $links = str_replace('</a>&nbsp;(', ' <span class="count">', $links);
+        $links = str_replace(')</li>', '</span></a></li>', $links);
         return $links;
     }
 }

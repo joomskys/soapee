@@ -206,9 +206,6 @@ if(!function_exists('soapee_case_study_brochure')){
 										</span>
 									</a>
 								</div>
-								<?php 
-									//var_dump(wp_get_attachment_metadata($file['id']));
-									//echo $file['id']; echo wp_get_attachment_metadata($file['id']); echo get_the_title( $file['id']).get_post_mime_type($file['id']).basename ( get_attached_file( $file['id']) ).size_format(filesize( get_attached_file( $file['id'] ) )); ?>
 							<?php }
 						}
 					?></div>

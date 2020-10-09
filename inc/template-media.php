@@ -91,11 +91,11 @@ if(!function_exists('soapee_post_gallery')){
         if( !empty($gallery_list[0]) || has_post_thumbnail() ){
             if(!empty($gallery_list[0])){
             ?>
-                <div class="cms-post-gallery-slide cms-slick-slide <?php if($light_box) {echo 'images-light-box';} ?>" >
+                <div class="cms-post-gallery-slide cms-slick-slide slick-slide <?php if($light_box) {echo 'images-light-box';} ?>" >
 	                <?php
 	                foreach ($gallery_list as $img_id):
 	                    ?>
-	                    <div class="carousel-item slick-slide-item">
+	                    <div class="cms-slick-item slick-slide-item">
 	                        <a class="light-box" href="<?php echo esc_url(wp_get_attachment_image_url($img_id, 'full'));?>"><img src="<?php echo soapee_get_image_url_by_size(['id' => $img_id, 'size' => $args['thumbnail_size']]);?>" alt="<?php echo esc_attr(get_post_meta( $img_id, '_wp_attachment_image_alt', true )) ?>"></a>
 	                    </div>
 	                    <?php
@@ -358,11 +358,16 @@ if(!function_exists('soapee_post_link')){
 if(!function_exists('soapee_post_image')){
     function soapee_post_image($args = []){
         $args = wp_parse_args($args, [
-            'id'             => null,
-            'thumbnail_size' => is_single() ? 'large' : 'medium',
-            'echo'           => true,
-            'default_thumb'  => apply_filters('soapee_default_post_thumbnail', false)
+            'id'              => null,
+            'thumbnail_size'  => is_single() ? 'large' : 'medium',
+            'echo'            => true,
+            'default_thumb'   => soapee_configs('default_post_thumbnail'),
+            'thumbnail_is_bg' => soapee_configs('thumbnail_is_bg'),
+            'class'           => '',
+            'img_class'       => '',
+            'show_image'      => true  
         ]);
+        extract($args);
         $image = $image_in_content = '';
         // Get first link in content 
         $image_in_content =  soapee_get_content_image(['echo' => false]);
@@ -370,8 +375,17 @@ if(!function_exists('soapee_post_image')){
         if(has_post_thumbnail($args['id'])){
            $image =  soapee_post_thumbnail($args);
         } elseif(!empty($image_in_content) && !is_single()){
+            $thumbnail_atts = [];
+            // class
+            $thumbnail_atts_class = ['post-image','cms-post',$args['class']];
+            if($thumbnail_is_bg) $thumbnail_atts_class[] = 'thumbnai-is-bg';
+            $thumbnail_atts[] = 'class="'.implode(' ', $thumbnail_atts_class).'"';
+            // style
+            $thumbnail_atts_style = [];
+            if($thumbnail_is_bg) $thumbnail_atts_style[] = 'background-image: url('.soapee_get_image_url_by_size(['id'=>$id,'size'=> 'full', 'default_thumb' => $default_thumb]).')';
+            if(!empty($thumbnail_atts_style)) $thumbnail_atts[] = 'style="'.implode(';',$thumbnail_atts_style).'"';
             // images
-            $image =  soapee_get_content_image(['echo' => false]);
+            $image =  '<div ' .implode(' ', $thumbnail_atts).'>'.soapee_get_content_image(['echo' => false]).'</div>';
         }
         if($args['echo'])
             echo apply_filters('soapee_post_image', $image);
@@ -379,6 +393,8 @@ if(!function_exists('soapee_post_image')){
             return $image;
     }
 }
+
+
 /**
  * Post Media
  * @since 1.0.1

@@ -62,7 +62,7 @@ class CMS_Recent_Posts_Widget extends WP_Widget
             $args['before_widget'] = str_replace('class="', 'class="'. $layout_class . ' ', $args['before_widget']);
         }
         printf('%s', $args['before_widget']);
-        echo wp_kses_post($args['before_title']) . wp_kses_post($title) . wp_kses_post($args['after_title']);
+        printf('%1$s %2$s %3$s', $args['before_title'], $title, $args['after_title']);
 
         
         $sticky = '';
@@ -169,8 +169,7 @@ class CMS_Recent_Posts_Widget extends WP_Widget
             echo '</div>';
         }
         wp_reset_postdata();
-        wp_reset_query();
-        echo wp_kses_post($args['after_widget']);
+        printf('%s' , $args['after_widget']);
     }
 
     /**
