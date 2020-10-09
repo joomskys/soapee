@@ -77,6 +77,8 @@
 
         // WooCommerce
         soapee_ajax_add_to_cart();
+        // elementor
+        soapee_elementor_section_full_width_with_space();
     });
 
     $.sep_grid_refresh = function (){
@@ -528,7 +530,6 @@
 
         $(".cms-header-hidden-sidebar").on('click', function (e) {
             e.preventDefault();
-            console.log('fuck123');
             $('.cms-hidden-sidebar').toggleClass('open');
         });
         $(".cms-hidden-close").on('click', function (e) {
@@ -654,7 +655,6 @@
         $('.h-btn-cart').on('click', function (e) {
             e.preventDefault();
             var $submenu = $(this).next('.widget_shopping_cart');
-            console.log($submenu);
             $(this).next('.widget_shopping_cart').toggleClass('open');
             if ($submenu.offset().left + $submenu.width() > $(window).width()) {
                 $submenu.css({'right':'0', 'left': 'auto'});
@@ -814,7 +814,10 @@
     ======================================================== **/
     function soapee_elementor_section_full_width_with_space(){
         'use strict';
+        console.log('fucl----');
+
         if($(window).width() < 1200 ) return;
+
         setTimeout(function(){
             $('.elementor-section-full_width').each(function () {
                 var offset = parseInt($(this).css('left').replace('-','')),

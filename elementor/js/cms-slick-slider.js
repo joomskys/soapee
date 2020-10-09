@@ -10,8 +10,6 @@
             return false;
         }
         var data = carousel.data();
-        console.log(data.arrowstablet);
-        console.log(data.arrowsmobile);
         var gutter = data.gutter;
         var slickOptions = {
             fade: true === data.fade,
