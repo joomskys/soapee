@@ -814,38 +814,43 @@
     ======================================================== **/
     function soapee_elementor_section_full_width_with_space(){
         'use strict';
-        console.log('fucl----');
+        if($(window).width() > 1199 ){
+            setTimeout(function(){
+                $('.elementor-section-full_width').each(function () {
+                    var offset = parseInt($(this).css('left').replace('-','')),
+                        $section_space_start = $(this).hasClass('cms-full-content-with-space-start'),
+                        $section_space_end = $(this).hasClass('cms-full-content-with-space-end');
 
-        if($(window).width() < 1200 ) return;
-
-        setTimeout(function(){
+                    if(soapee_is_rtl()){
+                        if($section_space_start) {
+                            $(this).css({
+                                'padding-right': offset + 'px',
+                            });
+                        } else if($section_space_end) {
+                            $(this).css({
+                                'padding-left': offset + 'px',
+                            });
+                        }
+                    } else {
+                        if($section_space_start){
+                            $(this).css({
+                                'padding-left': offset + 'px',
+                            });
+                        } else if($section_space_end){
+                            $(this).css({
+                                'padding-right': offset + 'px',
+                            });
+                        }
+                    }
+                })
+            }, 10 );
+        } else {
             $('.elementor-section-full_width').each(function () {
-                var offset = parseInt($(this).css('left').replace('-','')),
-                    $section_space_start = $(this).hasClass('cms-full-content-with-space-start'),
-                    $section_space_end = $(this).hasClass('cms-full-content-with-space-end');
-
-                if(soapee_is_rtl()){
-                    if($section_space_start) {
-                        $(this).css({
-                            'padding-right': offset + 'px',
-                        });
-                    } else if($section_space_end) {
-                        $(this).css({
-                            'padding-left': offset + 'px',
-                        });
-                    }
-                } else {
-                    if($section_space_start){
-                        $(this).css({
-                            'padding-left': offset + 'px',
-                        });
-                    } else if($section_space_end){
-                        $(this).css({
-                            'padding-right': offset + 'px',
-                        });
-                    }
-                }
+                $(this).css({
+                    'padding-left': '',
+                    'padding-right': ''
+                });
             })
-        }, 10 );
+        }
     }
 })(jQuery);
