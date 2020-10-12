@@ -72,10 +72,7 @@
 
     // Make sure you run this code under Elementor.
     $( window ).on( 'elementor/frontend/init', function() {
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/cms_image_carousel.default', CMSSlickSliderHandler );
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/cms_testimonial.default', CMSSlickSliderHandler );
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/cms_teams.default', CMSSlickSliderHandler );
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/cms_clients.default', CMSSlickSliderHandler );
         elementorFrontend.hooks.addAction( 'frontend/element_ready/cms_post_carousel.default', CMSSlickSliderHandler );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/cms_headline.default', CMSSlickSliderHandler );
     } );
 } )( jQuery );
