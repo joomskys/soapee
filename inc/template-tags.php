@@ -1363,13 +1363,14 @@ if(!function_exists('soapee_mobile_menu_icon')){
         <?php
     }
 }
+
 // Menu Right Class
 if(!function_exists('soapee_site_menu_right_class')){
     function soapee_site_menu_right_class($class=''){
         $css_class         = ['cms-navigation-attrs'];
         $cart_on           = soapee_get_opts('cart_on','0');
         $search_on         = soapee_get_opts('search_on','0');
-        $social_list       = soapee_get_opts( 'social_list' );
+        $social_list       = soapee_get_opts( 'social_list', ['enabled' => []]);
         $social_on         = (count($social_list['enabled']) > 1) ? '1' : '0';
         $hidden_sidebar_on = soapee_get_opts('hidden_sidebar_on', '0');
         if($cart_on == '1' || $search_on == '1' || $social_on == '1' || $hidden_sidebar_on == '1') $css_class[] = 'has-atts';

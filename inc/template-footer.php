@@ -149,9 +149,10 @@ if(!function_exists('soapee_footer_copyright')){
             'class' => ''
         ]);
         $classes = ['cms-footer-copyright', $args['class']];
+        $default = '&copy; 2020 Soapee by <a href="https://themeforest.net/user/cmssuperheroes" target="_blank">CMSSuperHeroes</a>. All Rights Reserved.';
     ?>
     <div class="<?php echo trim(implode(' ', $classes));?>">
-        <?php echo soapee_get_opts('footer_copyright',''); ?>
+        <?php echo soapee_get_opts('footer_copyright', $default); ?>
     </div>
     <?php
     }
@@ -164,7 +165,7 @@ if(!function_exists('soapee_social_footer')){
         ]);
         $social_list = soapee_get_opt( 'f_social_list' );
         if($social_list && isset($social_list['enabled']) && count($social_list['enabled']) > 1){
-            if($args['wrap']) printf('<div class="%s">', trim(implode(' ', ['cms-social', $args['class']])) );
+            if($args['wrap']) printf('<div class="%s">', trim(implode(' ', ['cms-social', $args['class'], 'empty-none'])) );
             foreach ($social_list['enabled'] as $social_key => $social_name){
                 $social_link = soapee_get_opt( 'social_' . $social_key . '_url' );
                 $social_link = !empty($social_link)?$social_link:'#';
