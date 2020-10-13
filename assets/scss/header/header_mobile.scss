@@ -139,6 +139,7 @@
         }
 		&.open:before{
 	    	@include font-awesome("\f068", 900);
+	    	color: $white;
 	    }
     }
 }
