@@ -112,7 +112,24 @@
 					color: $white;
 				}
 			}
+			&.active:not(first-child){
+				margin-top: 10px;
+			}
+			&.current-menu-ancestor,
+			&.active {
+				> a{
+					background-color: var(--accent-color);
+					color: $white !important;
+				}
+				> .main-menu-toggle{
+					&:before,
+					&:after{
+						color: $white !important;
+					}
+				}
+			}
 		}
+		
 		.sub-menu{
 			display: none;
 			font-size: var(--menu-font-size);
@@ -139,7 +156,6 @@
         }
 		&.open:before{
 	    	@include font-awesome("\f068", 900);
-	    	color: $white;
 	    }
     }
 }
