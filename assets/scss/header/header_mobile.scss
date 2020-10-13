@@ -112,8 +112,15 @@
 					color: $white;
 				}
 			}
-			&.active:not(first-child){
-				margin-top: 10px;
+			&.active{
+				&:not(first-child){
+					margin-top: 10px;
+				}
+			}
+			&.current-menu-item{
+				&:first-child{
+					margin-top: 10px;
+				}
 			}
 			&.current-menu-ancestor,
 			&.current-menu-item,
@@ -152,6 +159,7 @@
         text-align: center;
         top: 9px;
         width: 19px;
+        z-index: 10;
         &:before {
             @include font-awesome("\f067", 900);
         }
