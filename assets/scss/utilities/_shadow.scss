@@ -2,7 +2,7 @@
 	.cms-shadow-#{$name},
 	.cms-box-shadow-#{$name},
 	.cms-block-shadow-#{$name}{
-		@include box-shadow(#{$shadow});
+		@include box-shadow($shadow);
 		position: relative;
 	}
 	.cms-shadow-active-#{$name},
