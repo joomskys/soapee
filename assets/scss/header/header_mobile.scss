@@ -99,11 +99,15 @@
 	.cms-primary-menu{
 		color: var(--dropdown-regular);
 		padding: 5px 0!important;
-		> li{
-			padding: 5px 0;
-		}
 		.current-menu-item > a{
 			color: var(--dropdown-active);
+		}
+		.menu-item{
+			> a{
+				display: block;
+				padding: 7px 10px;
+				@include border-radius(5px);
+			}
 		}
 		.sub-menu{
 			display: none;
@@ -112,14 +116,6 @@
 			[dir="rtl"] &{
 				padding-left: 0;
 				padding-right: 15px;
-			}
-			&.submenu-open{
-				padding-top: 5px;
-			}
-			a{
-				display: block;
-				padding-top: 5px;
-				padding-bottom: 5px;
 			}
 		}
 	}
@@ -130,9 +126,9 @@
         height: 19px;
         line-height: 19px;
         position: absolute;
-        right: 0;
+        right: 10px;
         text-align: center;
-        top: 10px;
+        top: 15px;
         width: 19px;
         &:before {
             @include font-awesome("\f067", 900);
