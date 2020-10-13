@@ -107,6 +107,10 @@
 				display: block;
 				padding: 7px 10px;
 				@include border-radius(5px);
+				&.active{
+					background-color: var(--accent-color);
+					color: $white;
+				}
 			}
 		}
 		.sub-menu{
@@ -128,7 +132,7 @@
         position: absolute;
         right: 10px;
         text-align: center;
-        top: 15px;
+        top: 9px;
         width: 19px;
         &:before {
             @include font-awesome("\f067", 900);
