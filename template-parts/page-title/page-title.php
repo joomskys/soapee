@@ -27,11 +27,11 @@ if($pagetitle == '1') : ?>
                 <div class="container text-center d-flex justify-content-center">
                     <div class="cms-page-title-inner align-self-end">
                         <?php if(!is_404()){
-                            printf( '%s', wp_kses_post($titles_html)); 
+                            printf( '%s', $titles_html); 
                             if(!empty($sub_title)) : 
                         ?>
                             <h6 class="page-sub-title ft-sub">
-                                <?php echo wp_kses_post( $sub_title ); ?>
+                                <?php echo esc_html( $sub_title ); ?>
                             </h6>
                         <?php endif; 
                         } ?>

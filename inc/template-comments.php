@@ -7,9 +7,11 @@ function soapee_comment_field_to_bottom( $fields ) {
 	unset( $fields['comment'] );
 	$fields['comment'] = $comment_field;
 	// move fiedl cookies
-	$comment_field = $fields['cookies'];
-	unset($fields['cookies']);
-	 $fields['cookies'] = $comment_field;
+	if(isset($fields['cookies'])){
+		$comment_field = $fields['cookies'];
+		unset($fields['cookies']);
+		$fields['cookies'] = $comment_field;
+	}
 	return $fields;
 }
 add_filter( 'comment_form_fields', 'soapee_comment_field_to_bottom' );

@@ -31,7 +31,7 @@ if(isset($settings['clients']) && !empty($settings['clients']) && count($setting
             <div class="cms-slick-slide slick-slide">
                 <div class="cms-client-item p-tb-6 p-lr-10 bdr-1 bdr-solid bdr-grey9 bdr-radius-10 bg-white cms-box-shadow-hover-6 cms-transition">
                     <div class="cms-client-image text-center">
-                        <a <?php soapee_elementor_link_render($links, ['class' => 'd-block']); ?>><?php echo wp_kses_post($thumbnail); ?></a>
+                        <a <?php soapee_elementor_link_render($links, ['class' => 'd-block']); ?>><?php printf('%s', $thumbnail); ?></a>
                     </div>
                 </div>
             </div>

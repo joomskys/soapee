@@ -8,7 +8,7 @@ get_header();
 ?>
     <div class="container cms-content-container">
         <div class="row cms-content-row">
-            <div id="cms-content-area" class="<?php ecc_attr(soapee_content_css_class('text-center')); ?>">
+            <div id="cms-content-area" class="<?php soapee_content_css_class('text-center'); ?>">
                 <div class="row">
                     <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
                         <div data-title="<?php echo esc_attr(soapee_get_opt( 'heading_404_page', esc_html__('404', 'soapee') )); ?>" class="page-404-heading h2 text-100 lh-100 text-md-200 lh-md-180 text-primary">

@@ -732,12 +732,14 @@ if(!function_exists('soapee_page_title_opts')){
 					'type'                  => 'background',
 					'title'                 => esc_html__('Background', 'soapee'),
 					'subtitle'              => esc_html__('Page title background.', 'soapee'),
+					'output'                => array('body #pagetitle'),
 					'required'              => array( 0 => 'pagetitle', 1 => 'equals', 2 => '1' ),
 		        ),
 		        array(
 					'id'           => 'ptitle_overlay_color',
 					'type'         => 'color_rgba',
 					'title'        => esc_html__('Overlay Color', 'soapee'),
+					'output'       => array('background-color' => 'body #pagetitle.bg-overlay:before'),
 					'required'     => array( 0 => 'pagetitle', 1 => 'equals', 2 => '1' ),
 		        ),
 		        array(

@@ -92,7 +92,6 @@
                 masonry: {
                     columnWidth: '.grid-sizer',
                     gutter: 0,
-                    //fitRows: _fitRow
                 },
                 containerStyle: null,
                 stagger: 30,
@@ -374,9 +373,9 @@
      * Check right to left
     */
     function soapee_is_rtl(){
+        "use strict";
         var rtl = $('html[dir="rtl"]'),
             is_rtl = rtl.length ? true : false;
-            //console.log(is_rtl);
         return is_rtl;
     }
     /* =================
@@ -457,7 +456,11 @@
             });
         }
     }
-    // header sticky
+    /**
+     * header sticky
+     * $('#cms-header').css('top', topSpace);
+     * $('#cms-header').removeClass('header-sticky').css('top','');
+    */
     function soapee_header_sticky() {
         'use strict';
         var offsetTop = $('#cms-header').outerHeight();
@@ -467,9 +470,7 @@
         if($('#cms-header').hasClass('is-sticky')) {
             if (scroll_top > offsetTopAnimation) {
                 $('#cms-header').addClass('header-sticky').removeClass('header-ontop');
-                //$('#cms-header').css('top', topSpace);
             } else {
-                //$('#cms-header').removeClass('header-sticky').css('top','');
                 $('#cms-header').removeClass('header-sticky');
                 if($('#cms-header').hasClass('is-ontop')){
                     $('#cms-header').addClass('header-ontop');
@@ -634,16 +635,21 @@
                 return this;
             }
     })(jQuery);   
+
+    /**
+     * Background Moving
+     * $('.cms-bg-moving-v').bgscroll({scrollSpeed:20 , direction:'v' });
+     * $('.cms-bg-moving-d').bgscroll({scrollSpeed:20 , direction:'d' });
+    */
     function soapee_background_moving(){
         "use strict";
         $('.cms-bg-moving-h').bgscroll({scrollSpeed:20 , direction:'h' });
-        //$('.cms-bg-moving-v').bgscroll({scrollSpeed:20 , direction:'v' });
-        //$('.cms-bg-moving-d').bgscroll({scrollSpeed:20 , direction:'d' });
     }
     /**
      * WooCommerce Archive 
     **/
     function soapee_ajax_add_to_cart(){
+        'use strict';
         var $class = $('.ajax_add_to_cart').attr('class');
         $('.added_to_cart').addClass($class).removeClass('ajax_add_to_cart wc-forward');
     }
@@ -653,6 +659,7 @@
     */
     // open cart popup
     function soapee_open_cart_popup(){
+        'use strict';
         $('.h-btn-cart').on('click', function (e) {
             e.preventDefault();
             var $submenu = $(this).next('.widget_shopping_cart');

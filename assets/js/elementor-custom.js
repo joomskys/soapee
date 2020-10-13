@@ -33,44 +33,52 @@
 	     * Check right to left
 	    */
 	    function soapee_is_rtl(){
+	    	'use strict';
 	        var rtl = $('html[dir="rtl"]'),
 	            is_rtl = rtl.length ? true : false;
-	            //console.log(is_rtl);
 	        return is_rtl;
 	    }
 	    soapee_elementor_section_full_width_with_space();
 	    function soapee_elementor_section_full_width_with_space(){
 	        'use strict';
-	        if($(window).width() < 1200 ) return;
-	        setTimeout(function(){
-	            $('.elementor-section-full_width').each(function () {
-	                var offset = parseInt($(this).css('left').replace('-','')),
-	                    $section_space_start = $(this).hasClass('cms-full-content-with-space-start'),
-	                    $section_space_end = $(this).hasClass('cms-full-content-with-space-end');
+	        if($(window).width() > 1199 ){
+	            setTimeout(function(){
+	                $('.elementor-section-full_width').each(function () {
+	                    var offset = parseInt($(this).css('left').replace('-','')),
+	                        $section_space_start = $(this).hasClass('cms-full-content-with-space-start'),
+	                        $section_space_end = $(this).hasClass('cms-full-content-with-space-end');
 
-	                if(soapee_is_rtl()){
-	                    if($section_space_start) {
-	                        $(this).css({
-	                            'padding-right': offset + 'px',
-	                        });
-	                    } else if($section_space_end) {
-	                        $(this).css({
-	                            'padding-left': offset + 'px',
-	                        });
+	                    if(soapee_is_rtl()){
+	                        if($section_space_start) {
+	                            $(this).css({
+	                                'padding-right': offset + 'px',
+	                            });
+	                        } else if($section_space_end) {
+	                            $(this).css({
+	                                'padding-left': offset + 'px',
+	                            });
+	                        }
+	                    } else {
+	                        if($section_space_start){
+	                            $(this).css({
+	                                'padding-left': offset + 'px',
+	                            });
+	                        } else if($section_space_end){
+	                            $(this).css({
+	                                'padding-right': offset + 'px',
+	                            });
+	                        }
 	                    }
-	                } else {
-	                    if($section_space_start){
-	                        $(this).css({
-	                            'padding-left': offset + 'px',
-	                        });
-	                    } else if($section_space_end){
-	                        $(this).css({
-	                            'padding-right': offset + 'px',
-	                        });
-	                    }
-	                }
+	                })
+	            }, 10 );
+	        } else {
+	            $('.elementor-section-full_width').each(function () {
+	                $(this).css({
+	                    'padding-left': '',
+	                    'padding-right': ''
+	                });
 	            })
-	        }, 10 );
+	        }
 	    }
     } );
 }(jQuery));

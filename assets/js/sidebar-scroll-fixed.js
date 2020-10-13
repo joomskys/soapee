@@ -2,6 +2,7 @@
  * theia-sticky-sidebar
  */
 ! function(i) {
+    'use strict';
     i.fn.theiaStickySidebar = function(t) {
         var o = {
             containerSelector: "",
