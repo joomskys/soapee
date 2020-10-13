@@ -116,6 +116,7 @@
 				margin-top: 10px;
 			}
 			&.current-menu-ancestor,
+			&.current-menu-item,
 			&.active {
 				> a{
 					background-color: var(--accent-color);
