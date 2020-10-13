@@ -496,6 +496,7 @@
         $('.main-menu-toggle').on('click', function () {
             $(this).toggleClass('open');
             $(this).parent().find('> .sub-menu').toggleClass('submenu-open').slideToggle();
+            $(this).parent().toggleClass('active');
             $(this).parent().find('> a').toggleClass('active');
         });
     }
