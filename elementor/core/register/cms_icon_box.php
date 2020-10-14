@@ -64,7 +64,11 @@ etc_add_custom_widget(
                                 ],
                                 '4' => [
                                     'label' => esc_html__( 'Layout 4', 'soapee' ),
-                                    'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_icon_box/layout/layout3.png'
+                                    'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_icon_box/layout/layout4.png'
+                                ],
+                                '5' => [
+                                    'label' => esc_html__( 'Layout 5', 'soapee' ),
+                                    'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_icon_box/layout/layout5.png'
                                 ],
                             ],
                             'prefix_class' => 'cms-icon-box-layout-',

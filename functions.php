@@ -218,7 +218,8 @@ if(!function_exists('soapee_configs')){
                 '11' => '0px 0px 40.85px 2.15px rgba(0, 0, 0, 0.2)',
                 '12' => '0px 14px 45.57px 3.43px rgba(22, 19, 87, 0.15)',
                 '13' => '0px 1px 0px 0px rgba(191,191,191,.32)',  
-                '14' => '0px 0px 25px 0px rgba(0,0,0,.1)'   
+                '14' => '0px 0px 25px 0px rgba(0,0,0,.1)',
+                '15' => '0px 0px 11px 8px rgba(249, 249, 249, 1)'   
             ],
             // Gradient
             'gradient' => [
