@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Soapee\n"
-"POT-Creation-Date: 2020-10-13 10:53+0700\n"
+"POT-Creation-Date: 2020-10-14 21:03+0700\n"
 "PO-Revision-Date: 2020-07-11 09:16+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
