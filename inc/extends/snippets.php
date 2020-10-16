@@ -568,7 +568,8 @@ function soapee_cut_join_string_by_separator($string, $args = [] ){
         $new[] = '<span class="part-'.trim($key.' '.$class).'">'.$value.'</span>';
     }
     $string = implode(' ', $new);
-    echo wp_kses_post($string);
+    
+    printf('%s', $string);
 }
 
 /**

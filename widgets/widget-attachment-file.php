@@ -44,7 +44,6 @@ class CMS_Attachment_Files_Widget extends WP_Widget
         $title = empty( $instance['title'] ) ? esc_html__( 'CMS Attachment File', 'soapee' ) : $instance['title'];
         $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
-        //echo wp_kses_post($args['before_widget']);
         // add layout class to widget
         $layout_class = !empty($instance['layout']) ? 'layout-'.$instance['layout'] : 'layout-1';
         /* Add the layout from $layout to the class from the $before widget */
@@ -59,7 +58,7 @@ class CMS_Attachment_Files_Widget extends WP_Widget
         // before widget
         printf('%s', $args['before_widget']);
         // widget title
-        echo wp_kses_post($args['before_title']) . wp_kses_post($title) . wp_kses_post($args['after_title']);
+        printf('%1$s %2$s %3$s', $args['before_title'] , $title, $args['after_title']);
         // attachment
         $attachments = explode(',', $att_id);
         if(empty($attachments[0])){
@@ -89,7 +88,7 @@ class CMS_Attachment_Files_Widget extends WP_Widget
             }
         }
         // after widget
-        echo wp_kses_post($args['after_widget']);
+        printf('%s', $args['after_widget']);
     }
 
     /**

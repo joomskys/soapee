@@ -48,7 +48,6 @@ class CMS_Recent_Posts_Widget extends WP_Widget
         $title = empty( $instance['title'] ) ? esc_html__( 'Recent Posts', 'soapee' ) : $instance['title'];
         $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
-        //echo wp_kses_post($args['before_widget']);
         // add layout class to widget
         $layout_class = !empty($instance['layout']) ? 'layout-'.$instance['layout'] : 'layout-1';
         /* Add the layout from $layout to the class from the $before widget */

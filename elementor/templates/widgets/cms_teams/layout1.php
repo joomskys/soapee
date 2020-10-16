@@ -39,7 +39,7 @@ if(isset($settings['teams']) && !empty($settings['teams']) && count($settings['t
                                 </div>
                                 <div class="team-content pt-25 p-lr-30 pb-30">
                                     <?php if(!empty($team['team_desc'])) : ?>
-                                        <div class="team-desc"><?php echo wp_kses_post($team['team_desc']); ?></div>
+                                        <div class="team-desc"><?php echo printf('%s', $team['team_desc']); ?></div>
                                     <?php endif; ?>
                                     <div class="clearfix d-inline-block mt-25">
                                         <div class="team-social cms-social cms-social-style1">

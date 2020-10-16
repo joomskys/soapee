@@ -454,15 +454,14 @@ if(!function_exists('soapee_elementor_get_post_list')){
                                                 $content = strip_shortcodes( $post->post_content );
                                                 $content = apply_filters( 'the_content', $content );
                                                 $content = str_replace(']]>', ']]&gt;', $content);
-                                                $content = wp_trim_words( $content, $num_words, '' );
-                                                echo wp_kses_post($content);
+                                                echo wp_trim_words( $content, $num_words, '' );
                                             }
                                         ?>
                                     </div>
                                 <?php endif;
                                 if($show_button == 'true'): ?>
                                     <div class="entry-readmore">
-                                        <a class="text-accent btn-text elementor-animation-<?php echo esc_attr($hover_animation); ?>" href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo wp_kses_post($button_text); ?></a>
+                                        <a class="text-accent btn-text elementor-animation-<?php echo esc_attr($hover_animation); ?>" href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo esc_html($button_text); ?></a>
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -555,7 +554,7 @@ if(!function_exists('soapee_elementor_get_service')){
                         <a href="'.esc_url(get_permalink( $post->ID )).'">'.get_the_title($post->ID).'</a>
                     </div>
                     <div class="entry-content">'
-                        . wp_kses_post($content).
+                        . $content .
                     '</div>
                     <div class="entry-readmore m-t25">'
                         .$readmore.
@@ -583,7 +582,7 @@ if(!function_exists('soapee_elementor_get_service')){
                                     <div class="entry-title h4 m-b15 text-uppercase">
                                         <a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo  get_the_title($post->ID); ?></a>
                                     </div>
-                                    <div class="entry-content"><?php echo wp_kses_post($content); ?></div>
+                                    <div class="entry-content"><?php printf('%s', $content); ?></div>
                                     <?php if($args['show_readmore'] == '1'): ?>
                                         <div class="entry-readmore m-t25">
                                             <a class="btn" href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo esc_html__('Read More', 'soapee'); ?></a>

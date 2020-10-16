@@ -745,7 +745,7 @@ if(!function_exists('soapee_posts_nav_link')) {
         $next_post = get_next_post();
         $previous_post = get_previous_post();
     ?>
-        <div class="<?php echo trim(implode(' ', ['cms-single-next-prev-navigation row gutters-30 justify-content-between', $args['class']])); ?>">
+        <div class="<?php echo trim(implode(' ', ['cms-single-next-prev-navigation row gutters-30 justify-content-between align-items-center', $args['class']])); ?>">
             <?php if(!empty($previous_post)) { ?>
             <div class="col-lg-6 relative text-start">
                 <?php 

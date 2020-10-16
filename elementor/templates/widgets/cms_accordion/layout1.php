@@ -101,7 +101,7 @@ if(!empty($accordions)) : ?>
                     </span>
                     <?php } ?>
                 </<?php etc_print_html($title_html_tag); ?>>
-                <div <?php etc_print_html($widget->get_render_attribute_string( $content_key )); ?>><?php echo wp_kses_post(nl2br($ac_content)); ?></div>
+                <div <?php etc_print_html($widget->get_render_attribute_string( $content_key )); ?>><?php etc_print_html(nl2br($ac_content)); ?></div>
             </div>
         <?php
             endforeach;

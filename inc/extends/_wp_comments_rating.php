@@ -1,4 +1,5 @@
 <?php
+if(!class_exists('Elementor_Theme_Core')) return;
 //Create the rating interface.
 add_action( 'comment_form_logged_in_after', 'soapee_comment_rating_fields' );
 //add_action( 'comment_form_after_fields', 'soapee_comment_rating_fields' );

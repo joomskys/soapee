@@ -643,7 +643,7 @@ if(!function_exists('soapee_breadcrumb')){
 
         if ( $output )
         {
-            printf( '<ul class="%1$s">%2$s</ul>', trim(implode(' ', ['cms-breadcrumb unstyled', $args['class']])),wp_kses_post($output));
+            printf( '<ul class="%1$s">%2$s</ul>', trim(implode(' ', ['cms-breadcrumb unstyled', $args['class']])), $output);
         }
     }
 }
