@@ -4,20 +4,6 @@
 	.cms-block-shadow-#{$name}{
 		@include box-shadow($shadow);
 		position: relative;
-		/* &:after{
-			content: '';
-			width: 38px;
-			height: 25px;
-			display: block;
-			position: absolute;
-			left: 44px;
-			bottom: -25px;
-			background: url('../images/shadow#{$name}-arrow.png') left top no-repeat;
-			[dir="rtl"] &{
-				left: auto;
-				right: 44px;
-			}
-		} */
 	}
 	.cms-shadow-active-#{$name},
 	.cms-box-shadow-active-#{$name},
@@ -26,7 +12,7 @@
 		&:hover,
 		&.current,
 		&[class*="current"]{
-			@include box-shadow($shadow);
+			@include box-shadow(#{$shadow});
 		}
 	}
 	.active,
@@ -34,14 +20,14 @@
 		.cms-shadow-active-#{$name},
 		.cms-box-shadow-active-#{$name},
 		.cms-block-shadow-active-#{$name}{
-			@include box-shadow($shadow);
+			@include box-shadow(#{$shadow});
 		}
 	}
 	.cms-shadow-hover-#{$name},
 	.cms-box-shadow-hover-#{$name},
 	.cms-block-shadow-hover-#{$name}{
 		&:hover{
-			@include box-shadow($shadow);
+			@include box-shadow(#{$shadow});
 		}
 	}
 }

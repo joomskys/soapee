@@ -41,3 +41,21 @@
 .cms-icon-box-layout4:hover {
 	transform: translateY(-24px);
 }
+
+// layout 5
+.cms-icon-box-layout5 {
+	.cms-icon-box-icon {
+		width: 70px;
+		height: 70px;
+		margin-top: 5px;
+		img{
+			max-height: 40px;
+			width: auto;
+			filter: brightness(0) invert(1);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}

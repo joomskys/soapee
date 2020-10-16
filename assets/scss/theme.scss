@@ -95,7 +95,8 @@ $screen-xxl-min: 1600px;
 @import "woo/woo";
 // Extensions
 @import "extensions/extensions";
-
+// Extensions
+@import "variation-configs";
 .container{
   max-width: 1200px;
 }
