@@ -6,7 +6,7 @@ add_action( 'comment_form_logged_in_after', 'soapee_comment_rating_fields' );
 function soapee_comment_rating_fields () {
 	//if(is_singular('product')) return;
 	?>
-	<div class="row mt-10">
+	<div class="cms-comment-rating row mt-10">
 		<label for="rating" class="comment-form-field col-auto"><?php 
 			esc_html_e('Your Rating','soapee');
 		?><span class="required">*</span></label>

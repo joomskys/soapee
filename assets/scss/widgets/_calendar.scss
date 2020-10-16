@@ -10,6 +10,22 @@ table.wp-calendar-table{
 	td{
 		text-align: center;
 		border-right: 0;
+		position: relative;
+	}
+	tbody a{
+		color: var(--accent-color);
+    	font-weight: 700;
+    	display: block;
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	line-height: 41px;
+    	&:hover{
+    		background-color: var(--accent-color);
+    		color: $white;
+    	}
 	}
 }
 .widget_calendar .wp-calendar-nav{

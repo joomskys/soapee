@@ -15,6 +15,7 @@
     display: inline;
     float: left;
     margin-right: 35px;
+    margin-left: 0;
     [dir="rtl"] &{
         float: right;
         margin-right: 0;
@@ -25,6 +26,7 @@
     display: inline;
     float: right;
     margin-left: 35px;
+    margin-right: 0;
     [dir="rtl"] &{
         float: left;
         margin-left: 0;
