@@ -65,11 +65,12 @@ add_filter( 'body_class', 'soapee_body_classes' );
  */
 function soapee_posts_classes( $classes )
 {
+    global $post;
     if(has_post_thumbnail())
         $classes[] = 'cms-has-post-thumbnail';
     else 
         $classes[] = 'cms-no-post-thumbnail';
-
+    $classes[] = $post->post_name;
     return $classes;
 }
 add_filter( 'post_class', 'soapee_posts_classes' );
