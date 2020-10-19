@@ -79,8 +79,10 @@
 .widget_text .cms-widget-content{
     padding-bottom: 30px;
 }
-#monster-widget-placeholder-5  .cms-widget-content{
-    padding-top: 10px;
+#monster-widget-placeholder-5  {
+    .cms-widget-content{
+        padding-top: 10px;
+    }
 }
 @import "archive";
 @import "calendar";
