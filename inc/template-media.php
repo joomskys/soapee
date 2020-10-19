@@ -373,7 +373,7 @@ if(!function_exists('soapee_post_image')){
         extract($args);
         $image = $image_in_content = '';
         // Get first link in content 
-        $image_in_content =  soapee_get_content_image(['echo' => false]);
+        $image_in_content =  soapee_get_content_image(['echo' => false, 'class' => $args['img_class']]);
         
         if(has_post_thumbnail($args['id'])){
            $image =  soapee_post_thumbnail($args);
@@ -388,7 +388,7 @@ if(!function_exists('soapee_post_image')){
             if($thumbnail_is_bg) $thumbnail_atts_style[] = 'background-image: url('.soapee_get_image_url_by_size(['id'=>$id,'size'=> 'full', 'default_thumb' => $default_thumb]).')';
             if(!empty($thumbnail_atts_style)) $thumbnail_atts[] = 'style="'.implode(';',$thumbnail_atts_style).'"';
             // images
-            $image =  '<div ' .implode(' ', $thumbnail_atts).'>'.soapee_get_content_image(['echo' => false]).'</div>';
+            $image =  '<div ' .implode(' ', $thumbnail_atts).'>'.soapee_get_content_image(['echo' => false, 'class' => $args['img_class']]).'</div>';
         }
         if($args['echo'])
             echo apply_filters('soapee_post_image', $image);
@@ -413,7 +413,8 @@ if(!function_exists('soapee_post_media')){
             'class'          => '',
             'before'         => '',
             'after'          => '',
-            'img_class'      => ''   
+            'img_class'      => '',
+            'inner'          => true   
         ]);
         do_action('soapee_before_post_media');
         $post_format = !empty(get_post_format($args['id'])) ? get_post_format($args['id']) : 'standard';
@@ -425,7 +426,8 @@ if(!function_exists('soapee_post_media')){
         $classes[] = soapee_is_loop() ? 'loop' : '';
         if(!empty($args['wrap_class'])) $classes[] = $args['wrap_class'];
     ?>
-    <div class="<?php echo trim(implode(' ', $classes));?>"><div class="cms-featured-inner relative"><?php
+    <div class="<?php echo trim(implode(' ', $classes));?>"><?php 
+        if($args['inner']): ?><div class="cms-featured-inner relative"><?php endif;
         printf('%s', $args['before']);
             switch (get_post_format($args['id'])) {
                 case 'gallery':
@@ -452,7 +454,8 @@ if(!function_exists('soapee_post_media')){
             }
         printf('%s', $args['after']);
         do_action('soapee_post_media_content', $args);
-    ?></div></div>
+    ?><?php if($args['inner']): ?></div><?php endif; 
+    ?></div>
     <?php
         do_action('soapee_after_post_media');
     }
