@@ -17,6 +17,10 @@
 		margin-top: 15px;
 	    padding-top: 20px;
 	    border-top: 1px solid rgba(218, 217, 222, 1);
+	    &.depth-1:first-child{
+	    	border-top: 0;
+	    	padding-top: 0;
+	    }
 	}
 	> .comment,
 	> .review{
