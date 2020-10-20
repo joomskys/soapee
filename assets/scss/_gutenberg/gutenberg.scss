@@ -15,17 +15,17 @@
 }
 // Block
 [class*="wp-block-"]{
-	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-top: 30px!important;
+	margin-bottom: 30px!important;
 	&:first-child{
-		margin-top: 0;
+		margin-top: 0!important;
 	}
 	&:last-child{
-		margin-bottom: 0;
+		margin-bottom: 0!important;
 	}
 	[class*="wp-block-"]{
-		margin-top: 0;
-		margin-bottom: 0;
+		margin-top: 0!important;
+		margin-bottom: 0!important;
 	}
 }
 // Block Group 

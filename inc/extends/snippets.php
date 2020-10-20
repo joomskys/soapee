@@ -153,7 +153,7 @@ function soapee_get_content_link( $args = []){
 function soapee_get_content_image( $args = []){
     $args = wp_parse_args($args, [
         'content' => '',
-        'class'   => 'content-image',
+        'class'   => '',
         'echo'    => true
     ]);
     $src = $title = $alt = $srcset = $sizes = '';
@@ -185,6 +185,8 @@ function soapee_get_content_image( $args = []){
     if(preg_match( '/<img\s[^>]*?alt=([\'"])(.+?)\1/is', $args['content'], $_alt )) {
         $alt = isset($_alt[2]) ? $_alt[2] : '';
     }
+    // css class 
+    $args['class'] .= ' content-image';
     if(!empty($src)){
         if($args['echo'])
             echo '<img src="'.esc_url_raw($src).'" srcset="'.$srcset.'" sizes="'.esc_attr($sizes).'" title="'.esc_attr($title).'" alt="'.esc_attr($alt).'" class="'.esc_attr($args['class']).'" />';

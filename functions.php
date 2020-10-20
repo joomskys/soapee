@@ -626,7 +626,7 @@ function soapee_scripts() {
     }
     // theme style
     wp_enqueue_style( 'soapee', get_template_directory_uri() . '/assets/css/theme'.$min.'.css', array(), $theme->get( 'Version' ) );
-    //wp_add_inline_style( 'soapee', soapee_inline_styles() );
+    wp_add_inline_style( 'soapee', soapee_inline_styles() );
     // WP Comment
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );

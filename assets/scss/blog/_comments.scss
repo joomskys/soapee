@@ -5,13 +5,16 @@
 		display: none;
 	}
 }
+.comments-title{
+	margin-bottom: 35px;
+}
 .commentlist{
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	.comment,
 	.review{
-		margin-top: 30px;
+		margin-top: 15px;
 	}
 	> .comment,
 	> .review{
@@ -37,12 +40,18 @@
 #comments + #review_form_wrapper , // respond on woo review
 .comment-body + .comment-respond {
 	margin-top: 30px;
-	padding-top: 30px;
+	padding-top: 32px;
 	@include soapee_meta_separator_line('top');
 }
 #respond{
 	.comment-reply-title{
 		margin-bottom: 25px;
+	}
+	.logged-in-as{
+		margin-bottom: 15px;
+	}
+	.cms-comment-rating {
+		padding-bottom: 10px;
 	}
 	#commentform{
 		> .row{
@@ -56,12 +65,10 @@
 		}
 	}
 	.comment-form-cookies-consent{
-		text-align: center;
 		padding-top: 15px;
 	}
 	.form-submit{
-		margin-top: 30px;
-		text-align: center;
+		margin-top: 35px;
 		input[name="submit"]{
 			width: auto;
 		}

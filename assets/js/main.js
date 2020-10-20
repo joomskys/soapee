@@ -610,6 +610,7 @@
      * BACKGROUND IMAGE MOVING FUNCTION BY= jquery.bgscroll.js
     */
     (function() {
+        "use strict";
         $.fn.bgscroll = $.fn.bgScroll = function( options ) {
             
             if( !this.length ) return this;

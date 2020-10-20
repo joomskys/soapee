@@ -170,6 +170,9 @@ label{
 input + label{
   display: inline-block;
 }
+input[type="radio"] + label{
+  padding-top: 3px;
+}
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -377,6 +380,9 @@ embed,
 iframe,
 object {
     max-width: 100%;
+}
+figure{
+  margin: 0;
 }
 // Paragrap
 p{

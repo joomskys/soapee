@@ -122,7 +122,8 @@ if(!function_exists('soapee_post_video')){
             'id'             => null,
             'thumbnail_size' => is_single() ? 'large' : 'medium',
             'echo'           => true,
-            'default_thumb'  => apply_filters('soapee_default_post_thumbnail', false)
+            'default_thumb'  => apply_filters('soapee_default_post_thumbnail', false),
+            'class'          => ''
         ]);
         $video_url = soapee_get_post_format_value($args['id'], $args['video_url'], '');
         $video_file = soapee_get_post_format_value($args['id'], $args['video_file'], []);
@@ -137,7 +138,7 @@ if(!function_exists('soapee_post_video')){
         $video = '';
         ob_start();
         if (!empty($video_url)) {
-            $video = do_shortcode($wp_embed->autoembed($video_url));
+            $video = '<div class="'.esc_attr($args['class']).'">'.do_shortcode($wp_embed->autoembed($video_url)).'</div>';
         } elseif (!empty($video_file_id)) {
             /* Get default video poster */
             $poster = !empty(get_the_post_thumbnail_url($video_file_id)) ? get_the_post_thumbnail_url($video_file_id,'full') : get_the_post_thumbnail_url(get_the_ID(),'full');
@@ -153,25 +154,25 @@ if(!function_exists('soapee_post_video')){
             );
             switch ($mime_type[0]) {
                 case 'audio':
-                    $video = do_shortcode($wp_embed->autoembed($video_file['url']));
+                    $video = '<div class="'.esc_attr($args['class']).'">'.do_shortcode($wp_embed->autoembed($video_file['url'])).'</div>';
                     break;
                 
                 default:
                     if(!empty($poster))
-                        $video = wp_video_shortcode($video_atts);
+                        $video = '<div class="'.esc_attr($args['class']).'">'.wp_video_shortcode($video_atts).'</div>';
                     else 
-                        $video = do_shortcode($wp_embed->autoembed($video_file['url']));
+                        $video = '<div class="'.esc_attr($args['class']).'">'.do_shortcode($wp_embed->autoembed($video_file['url'])).'</div>';
                     break;
             }            
         } elseif ('' != $video_html) {
             $_video_html = explode(',', $video_html);
             foreach ($_video_html as $value) {
-                $video .= '<div class="video-item">'.do_shortcode($wp_embed->autoembed($value)).'</div>';
+                $video .= '<div class="video-item">'.'<div class="'.esc_attr($args['class']).'">'.do_shortcode($wp_embed->autoembed($value)).'</div></div>';
             }
         } elseif(! empty( $video_in_content ) && !is_singular()){
             // If not a single post, highlight the video file.
             foreach ( $video_in_content as $video_in_content_html ) {
-                $video .= $video_in_content_html;
+                $video .= '<div class="'.esc_attr($args['class']).'">'.$video_in_content_html.'</div>';
             }
         } else {
         	$video = soapee_post_thumbnail($args);
@@ -179,9 +180,9 @@ if(!function_exists('soapee_post_video')){
         $video .= ob_get_clean();
         // Show video 
         if($args['echo'])
-            echo '<div class="entry-video">'.apply_filters('soapee_post_video', $video).'</div>';
+            echo '<div class="cms-post-video">'.apply_filters('soapee_post_video', $video).'</div>';
         else 
-            return '<div class="entry-video">'.$video.'</div>';
+            return '<div class="cms-post-video">'.$video.'</div>';
     }
 }
 
@@ -196,7 +197,9 @@ if(!function_exists('soapee_post_audio')){
             'id'             => null,
             'thumbnail_size' => is_single() ? 'large' : 'medium',
             'echo'           => true,
-            'default_thumb'  => apply_filters('soapee_default_post_thumbnail', false)
+            'default_thumb'  => apply_filters('soapee_default_post_thumbnail', false),
+            'class'          => '',
+            'img_class'      => ''
         ]);
         global $wp_embed;
         $audio_url = soapee_get_post_format_value($args['id'], $args['audio_url'], '');
@@ -224,28 +227,28 @@ if(!function_exists('soapee_post_audio')){
         $audio = '';
         ob_start();
         if(!empty($audio_url)){
-            $audio =  do_shortcode($wp_embed->autoembed($audio_url));
+            $audio =  '<div class="'.esc_attr($args['class']).'">'.do_shortcode($wp_embed->autoembed($audio_url)).'</div>';
         } elseif (!empty($audio_file['id'])) {
             switch ($mime_type[0]) {
                 case 'audio':
-                    $audio = do_shortcode($wp_embed->autoembed($audio_file['url']));
+                    $audio = '<div class="'.esc_attr($args['class']).'">'.do_shortcode($wp_embed->autoembed($audio_file['url'])).'</div>';
                     break;
                 case 'application':
-                    $audio = do_shortcode($wp_embed->autoembed($audio_file['url']));
+                    $audio = '<div class="'.esc_attr($args['class']).'">'.do_shortcode($wp_embed->autoembed($audio_file['url'])).'</div>';
                     break;
                 
                 default:
                     if(!empty($poster)){
-                        $audio = wp_video_shortcode($audio_atts);
+                        $audio = '<div class="'.esc_attr($args['class']).'">'.wp_video_shortcode($audio_atts).'</div>';
                     } else {
-                        $audio = do_shortcode($wp_embed->autoembed($audio_file['url']));
+                        $audio = '<div class="'.esc_attr($args['class']).'">'.do_shortcode($wp_embed->autoembed($audio_file['url'])).'</div>';
                     }
                     break;
-            }            
+            }
         } elseif(! empty( $audio_in_content ) && !is_singular()){
             // If not a single post, highlight the audio file.
             foreach ( $audio_in_content as $audio_in_content_html ) {
-                $audio .= $audio_in_content_html;
+                $audio .= '<div class="'.esc_attr($args['class']).'">'.$audio_in_content_html.'</div>';
             }
         } elseif ( has_post_thumbnail() ){
             $audio = soapee_post_thumbnail($args);
@@ -370,7 +373,7 @@ if(!function_exists('soapee_post_image')){
         extract($args);
         $image = $image_in_content = '';
         // Get first link in content 
-        $image_in_content =  soapee_get_content_image(['echo' => false]);
+        $image_in_content =  soapee_get_content_image(['echo' => false, 'class' => $args['img_class']]);
         
         if(has_post_thumbnail($args['id'])){
            $image =  soapee_post_thumbnail($args);
@@ -385,7 +388,7 @@ if(!function_exists('soapee_post_image')){
             if($thumbnail_is_bg) $thumbnail_atts_style[] = 'background-image: url('.soapee_get_image_url_by_size(['id'=>$id,'size'=> 'full', 'default_thumb' => $default_thumb]).')';
             if(!empty($thumbnail_atts_style)) $thumbnail_atts[] = 'style="'.implode(';',$thumbnail_atts_style).'"';
             // images
-            $image =  '<div ' .implode(' ', $thumbnail_atts).'>'.soapee_get_content_image(['echo' => false]).'</div>';
+            $image =  '<div ' .implode(' ', $thumbnail_atts).'>'.soapee_get_content_image(['echo' => false, 'class' => $args['img_class']]).'</div>';
         }
         if($args['echo'])
             echo apply_filters('soapee_post_image', $image);
@@ -410,7 +413,8 @@ if(!function_exists('soapee_post_media')){
             'class'          => '',
             'before'         => '',
             'after'          => '',
-            'img_class'      => ''   
+            'img_class'      => '',
+            'inner'          => true   
         ]);
         do_action('soapee_before_post_media');
         $post_format = !empty(get_post_format($args['id'])) ? get_post_format($args['id']) : 'standard';
@@ -422,7 +426,8 @@ if(!function_exists('soapee_post_media')){
         $classes[] = soapee_is_loop() ? 'loop' : '';
         if(!empty($args['wrap_class'])) $classes[] = $args['wrap_class'];
     ?>
-    <div class="<?php echo trim(implode(' ', $classes));?>"><div class="cms-featured-inner relative"><?php
+    <div class="<?php echo trim(implode(' ', $classes));?>"><?php 
+        if($args['inner']): ?><div class="cms-featured-inner relative"><?php endif;
         printf('%s', $args['before']);
             switch (get_post_format($args['id'])) {
                 case 'gallery':
@@ -449,7 +454,8 @@ if(!function_exists('soapee_post_media')){
             }
         printf('%s', $args['after']);
         do_action('soapee_post_media_content', $args);
-    ?></div></div>
+    ?><?php if($args['inner']): ?></div><?php endif; 
+    ?></div>
     <?php
         do_action('soapee_after_post_media');
     }

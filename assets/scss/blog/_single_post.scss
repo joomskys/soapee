@@ -1,4 +1,5 @@
-.cms-post-content{
+.cms-post-content,
+.comment-text{
 	ul:not(class),
 	ol:not(class){
 		list-style-position: inside;
@@ -23,5 +24,6 @@
 .post-password-form{
 	input[name="post_password"]{
 		margin-bottom: 20px;
+		margin-top: 13px;
 	}
 }

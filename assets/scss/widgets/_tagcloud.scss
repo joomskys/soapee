@@ -1,6 +1,7 @@
 .widget_tag_cloud{
 	.cms-widget-content{
 		padding-top: 10px;
+		padding-bottom: 30px;
 	}
 }
 
@@ -14,7 +15,7 @@ $tagcloud_space: 10px;
 		flex: 0 0 auto;
 		max-width: 100%;
 		margin: $tagcloud_space /2;
-		padding: 4px 21px;
+		padding: 3px 21px 5px;
 		border: 1px solid var(--accent-color);
 		background: var(--accent-color);
 		color:  $white-color;
