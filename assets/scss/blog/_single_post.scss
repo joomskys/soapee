@@ -27,3 +27,12 @@
 		margin-top: 13px;
 	}
 }
+
+body.single-post{
+	table{
+		th,
+		tr.even{
+			background: #f5f5f5;
+		}
+	}
+}
