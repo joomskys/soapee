@@ -1,6 +1,11 @@
 .widget_archive,
 .widget_categories,
-.widget_product_categories{
+.widget_product_categories,
+.widget_pages,
+.widget_meta,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_nav_menu{
 	ul:not(.children){
 		[class*="sidebar-area"] &{
 			margin: -20px -20px -30px; // custom layout on sidebar area only
