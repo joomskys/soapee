@@ -1,10 +1,5 @@
 .widget_nav_menu {
     ul.menu {
-        margin: 0 -15px;
-        overflow: hidden;
-        > li {
-            padding: 0 15px;
-        }
     }
     &.horizontal{
         .menu{

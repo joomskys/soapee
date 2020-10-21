@@ -11,6 +11,7 @@
 		@include transition();
 		&:last-child{
 			border-bottom: 0;
+			padding-bottom: 30px;
 		}
 		&:hover{
 			background: $accent_color;
