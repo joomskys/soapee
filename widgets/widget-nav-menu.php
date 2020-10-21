@@ -42,7 +42,7 @@ class Soapee_Widget_Menu_Walker extends Walker_Nav_Menu
 
 		$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
-		$classes[] = 'menu-item-depth-'.$depth;
+		$classes[] = 'cms-menu-item-depth-'.$depth;
 		/**
 		 * Filters the arguments for a single nav menu item.
 		 *
