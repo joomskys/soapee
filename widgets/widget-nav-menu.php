@@ -2,6 +2,7 @@
 add_filter('widget_nav_menu_args', 'soapee_widget_nav_menu_args');
 function soapee_widget_nav_menu_args($nav_menu_args){
 	$nav_menu_args['fallback_cb'] = new Soapee_Widget_Menu_Walker;
+	return $nav_menu_args;
 }
 
 //add_filter( 'nav_menu_css_class', 'soapee_nav_menu_css_class', 10, 2);
