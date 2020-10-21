@@ -6,7 +6,7 @@ function soapee_widget_nav_menu_args($nav_menu_args){
 
 add_filter( 'nav_menu_css_class', 'soapee_nav_menu_css_class', 10, 2);
 function soapee_nav_menu_css_class($classes, $depth){
-	$classes[] = ' fuck-'.$depth;
+	$classes[] = 'fuck-'.$depth;
 	return $classes;
 } 
 /**
