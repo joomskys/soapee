@@ -16,7 +16,6 @@ function soapee_nav_menu_css_class($classes, $depth){
  */
 class Soapee_Widget_Menu_Walker extends Walker_Nav_Menu
 {
-	die('fucl');
 	/**
 	 * Starts the element output.
 	 *
