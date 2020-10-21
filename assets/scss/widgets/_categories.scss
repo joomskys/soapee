@@ -5,7 +5,7 @@
 .widget_meta,
 .widget_recent_entries,
 .widget_nav_menu{
-	ul:not(.children){
+	ul:not(.children):not(.sub-menu){
 		[class*="sidebar-area"] &{
 			margin: -20px -20px -30px; // custom layout on sidebar area only
 		}
