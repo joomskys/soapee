@@ -40,7 +40,8 @@
 		}
 	}
 	ul, ol{
-		&.children{
+		&.children,
+		&.sub-menu{
 			padding-left: 0;
 			padding-right: 0;
 			a{
