@@ -1,4 +1,9 @@
 .widget_recent_comments{
+	ul:not(.children){
+		[class*="sidebar-area"] &{
+			margin: -20px -20px -30px; // custom layout on sidebar area only
+		}
+	}
 	li{
 		padding: 17px 20px;
 		font-weight: 600;
@@ -10,7 +15,8 @@
 		&:hover{
 			background: $accent_color;
 			color: $white_color;
-			*{
+			*,
+			a:not([class]){
 				color: inherit;
 			}
 		}
