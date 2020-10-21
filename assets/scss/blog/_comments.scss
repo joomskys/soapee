@@ -49,6 +49,9 @@
 	padding-top: 32px;
 	@include soapee_meta_separator_line('top');
 }
+.comment-body + .comment-respond{
+	padding-bottom: 0.1px;
+}
 #respond{
 	.comment-reply-title{
 		margin-bottom: 25px;
