@@ -31,6 +31,7 @@ class Soapee_Widget_Menu_Walker extends Walker_Nav_Menu
 	 * @param int      $id     Current item ID.
 	 */
 	public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+		die('xxx');
 		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
 			$t = '';
 			$n = '';
