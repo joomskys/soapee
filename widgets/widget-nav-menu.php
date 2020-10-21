@@ -1,12 +1,13 @@
 <?php
-//add_filter('widget_nav_menu_args', 'soapee_widget_nav_menu_args');
+add_filter('widget_nav_menu_args', 'soapee_widget_nav_menu_args');
 function soapee_widget_nav_menu_args($nav_menu_args){
 	$nav_menu_args['fallback_cb'] = new Soapee_Widget_Menu_Walker;
 }
 
-add_filter( 'nav_menu_css_class', 'soapee_nav_menu_css_class', 10, 2);
+//add_filter( 'nav_menu_css_class', 'soapee_nav_menu_css_class', 10, 2);
 function soapee_nav_menu_css_class($classes, $depth){
-	$classes[] = 'fuck-'.$depth;
+	var_dump($depth);
+	$classes[] = 'fuck-';
 	return $classes;
 } 
 /**
@@ -41,7 +42,7 @@ class Soapee_Widget_Menu_Walker extends Walker_Nav_Menu
 
 		$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
-
+		$classes[] = 'menu-item-depth-'.$depth;
 		/**
 		 * Filters the arguments for a single nav menu item.
 		 *
