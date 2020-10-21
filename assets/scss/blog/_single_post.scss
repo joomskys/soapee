@@ -30,8 +30,8 @@
 
 body.single-post{
 	table{
-		th,
-		tr.even{
+		thead,
+		tbody tr:nth-child(even){
 			background: #f5f5f5;
 		}
 	}
