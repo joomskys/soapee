@@ -451,7 +451,7 @@
         'use strict';
         var offsetTop = $('#cms-header-top').outerHeight();
         if($('#cms-header').hasClass('is-ontop')) {
-            $('#cms-header').css({
+            $('#cms-header.header-ontop').css({
                 'top': offsetTop
             });
         }
