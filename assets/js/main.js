@@ -467,13 +467,18 @@
         var h_header = $('.fixed-height').outerHeight();
         var offsetTopAnimation = offsetTop + 200;
         var topSpace = $('html').css('margin-top');
+        var offsetTop = $('#cms-header-top').outerHeight();
         if($('#cms-header').hasClass('is-sticky')) {
             if (scroll_top > offsetTopAnimation) {
-                $('#cms-header').addClass('header-sticky').removeClass('header-ontop');
+                $('#cms-header').addClass('header-sticky').removeClass('header-ontop').css({
+                    'top': '0'
+                });
             } else {
                 $('#cms-header').removeClass('header-sticky');
                 if($('#cms-header').hasClass('is-ontop')){
-                    $('#cms-header').addClass('header-ontop');
+                    $('#cms-header').addClass('header-ontop').css({
+                        'top': offsetTop
+                    });
                 }
             }
         }
