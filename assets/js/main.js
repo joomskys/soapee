@@ -450,8 +450,8 @@
     function soapee_header_ontop() {
         'use strict';
         var offsetTop = $('#cms-header-top').outerHeight();
-        if($('#site-header-wrap').hasClass('is-ontop')) {
-            $('#site-header-wrap').css({
+        if($('#cms-header').hasClass('is-ontop')) {
+            $('#cms-header').css({
                 'top': offsetTop
             });
         }
