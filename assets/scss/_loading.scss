@@ -1,0 +1,40 @@
+/* Page Loading */
+#cms-loadding {
+  background: #fff;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  @include transition(all 300ms linear 0ms);
+  .loading-spinner {
+    margin: -20px auto 0 auto;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    position: relative;
+    text-align: center;
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+  }
+
+  .loading-dot1, .loading-dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: $primary_color;
+    border-radius: 100%;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+
+  .loading-dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+}
