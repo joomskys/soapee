@@ -11,8 +11,7 @@
 if(!function_exists('soapee_page_loading')){
     function soapee_page_loading()
     {
-        $page_loading = soapee_get_opt( 'show_page_loading', false );
-
+        $page_loading = (bool)soapee_get_opts( 'show_page_loading', false );
         if($page_loading) { ?>
             <div id="cms-loadding" class="cms-loader">
                 <div class="loading-spinner">
