@@ -185,7 +185,7 @@ if(!function_exists('soapee_header_opts')){
 			'0'    => get_template_directory_uri() . '/assets/images/header-layout/h0.jpg',
 		];
 		$opt_list = [
-			'1' => get_template_directory_uri() . '/assets/images/header-layout/h1.jpg'
+			'1' => get_template_directory_uri() . '/assets/images/header-layout/h1.png'
 		];
 		$header_container_width_default = [
 			'-1'    => esc_html__('Theme Default', 'soapee')
@@ -791,7 +791,7 @@ if(!function_exists('soapee_footer_opts')){
 			'-1' => get_template_directory_uri() . '/assets/images/header-layout/h-df.jpg',
 		];
 		$layout_list = [
-			'1' => get_template_directory_uri() . '/assets/images/footer-layout/f1.jpg',
+			'1' => get_template_directory_uri() . '/assets/images/footer-layout/f1.png',
 		];
 		
 		if($args['default']){

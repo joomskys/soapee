@@ -10,7 +10,8 @@
         soapee_post_media([
             'thumbnail_size' => 'full',
             'class'          => 'mb-20 text-center',
-            'img_class'      => 'bdr-radius-15'   
+            'img_class'      => 'bdr-radius-15',
+            'show_image'     =>  (bool) soapee_get_opts('post_feature_image_on', true)    
         ]);
         soapee_post_meta([
             'show_date'   => soapee_get_opts('post_date_on','1'),

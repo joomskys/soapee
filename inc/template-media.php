@@ -15,7 +15,7 @@ if(!function_exists('soapee_post_thumbnail')){
             'show_image'      => true    
         ]);
         extract($args);
-        if(!has_post_thumbnail($args['id']) && !$default_thumb) return;
+        if((!has_post_thumbnail($args['id']) && !$default_thumb) || !$show_image ) return;
 
         $thumbnail_atts = [];
         // class
@@ -414,7 +414,8 @@ if(!function_exists('soapee_post_media')){
             'before'         => '',
             'after'          => '',
             'img_class'      => '',
-            'inner'          => true   
+            'inner'          => true,
+            'show_image'     => true 
         ]);
         do_action('soapee_before_post_media');
         $post_format = !empty(get_post_format($args['id'])) ? get_post_format($args['id']) : 'standard';

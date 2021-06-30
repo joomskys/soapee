@@ -15,7 +15,7 @@ $alignment : (
 );
 @each $name, $align in $alignment{
 	.cms-justify-content-#{$name} {
-		> .elementor-container > .elementor-row{
+		> .elementor-container{
 			justify-content: #{$align};
 		}
 	}
@@ -40,6 +40,7 @@ $breakpoints: $grid-breakpoints;
 			.elementor-col#{$infix}-#{$name},
 			.elementor-column[data-col="#{$name}"] {
 				width: #{$width};
+				flex: 0 0 #{$width};
 			}
 		}
 	}
@@ -57,9 +58,7 @@ $breakpoints: $grid-breakpoints;
 .elementor-editor-wp-page .cms-content{
   z-index: 1000;
 }
-.elementor-section-wrap .elementor-section .elementor-container{
-  display: block;
-}
+
 .elementor .elementor-section.elementor-section-boxed>.elementor-container{
   max-width: unset;
 }
@@ -68,26 +67,26 @@ $breakpoints: $grid-breakpoints;
   flex-wrap: wrap;
 }
 .elementor-section {
+	.elementor-container{
+		flex-wrap: wrap;
+	}
 	>.elementor-column-gap-default{
-		//padding: $grid-gutters/2;
-  		> .elementor-row{
-	    	margin: $grid-gutters/-2;
-		    >.elementor-column{
-				padding: $grid-gutters/2;
-				> .elementor-element-populated{
-					padding: 0;
-				}
-		    }
-		}
+    	margin: $grid-gutters/-2;
+	    >.elementor-column{
+			padding: $grid-gutters/2;
+			> .elementor-element-populated{
+				padding: 0;
+			}
+	    }
   	}
   	@each $name, $gutter in $theme-gutters{
   		&.gutters-#{$name}{
-  			> .elementor-container > .elementor-row{
+  			> .elementor-container {
   				margin: $gutter / -1;
   				> .elementor-column{
-  					padding: $gutter;
+  					padding: 0;
   					>.elementor-element-populated{
-  						padding: 0;
+  						padding: $gutter;
   					}
   				}
   			}

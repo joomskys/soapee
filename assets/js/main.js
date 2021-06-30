@@ -450,8 +450,8 @@
     function soapee_header_ontop() {
         'use strict';
         var offsetTop = $('#cms-header-top').outerHeight();
-        if($('#cms-header').hasClass('is-ontop')) {
-            $('#cms-header.header-ontop').css({
+        if($('#site-header-wrap').hasClass('is-ontop')) {
+            $('#site-header-wrap').css({
                 'top': offsetTop
             });
         }
@@ -467,18 +467,13 @@
         var h_header = $('.fixed-height').outerHeight();
         var offsetTopAnimation = offsetTop + 200;
         var topSpace = $('html').css('margin-top');
-        var offsetTop = $('#cms-header-top').outerHeight();
         if($('#cms-header').hasClass('is-sticky')) {
             if (scroll_top > offsetTopAnimation) {
-                $('#cms-header').addClass('header-sticky').removeClass('header-ontop').css({
-                    'top': '0'
-                });
+                $('#cms-header').addClass('header-sticky').removeClass('header-ontop');
             } else {
                 $('#cms-header').removeClass('header-sticky');
                 if($('#cms-header').hasClass('is-ontop')){
-                    $('#cms-header').addClass('header-ontop').css({
-                        'top': offsetTop
-                    });
+                    $('#cms-header').addClass('header-ontop');
                 }
             }
         }
